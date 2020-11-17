@@ -1,0 +1,6 @@
+Olá, me chamo Erick, nasci e moro em João Pessoa - PB, tenho diferentes hobbys em horas livres, gosto de ler,
+praticar alguma atividade física como correr ou musculação, ou assistir netflix, minha antiga profissão era como 
+técnico em eletrotécnica, fui estudante de engenharia elétrica na ufcg porém não estava gostando da área em si, 
+só me interessei pela parte de programação e como não é um curso com foco em desenvolvimento de software,
+procurei algo mais específico por prazer em programar e hoje estou como aluno na Labenu, eu sempre me interessei por 
+tecnologias as possibilidades de criar o novo e ajudar a trasnformar vidas através da programação é o que me motiva.
