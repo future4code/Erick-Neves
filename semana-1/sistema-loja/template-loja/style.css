@@ -1,0 +1,29 @@
+
+.cabeçalho {
+    background-color: aquamarine;
+    text-align: center;
+    padding: 20px;
+    margin: auto;
+}
+
+.barnavegacao {
+    background-color: rgb(68, 177, 140);
+}
+
+.barnavegacao a:hover {
+    background-color: rgb(107, 207, 174);
+}
+
+.conteudo {
+    background-color: rgb(44, 211, 155);
+    text-align: center;
+    padding: 20px;
+    margin: auto;
+}
+
+.rodape {
+    background-color: cadetblue;
+    text-align: center;
+    padding: 20px;
+    margin: auto;
+}
