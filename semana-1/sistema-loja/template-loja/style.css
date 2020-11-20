@@ -1,5 +1,16 @@
 
+body {
+    margin: 0;
+  }
+
 .cabeçalho {
+    background-color: aquamarine;
+    text-align: center;
+    padding: 50px;
+    margin: auto;
+}
+
+.cabeçalho-pag-sec {
     background-color: aquamarine;
     text-align: center;
     padding: 20px;
@@ -8,16 +19,28 @@
 
 .barnavegacao {
     background-color: rgb(68, 177, 140);
+    text-align: right;
+    padding: 20px;
 }
+
+.barnavegacao a {
+    background-color: rgb(59, 175, 136);
+    padding: 20px;
+    text-decoration-line: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 
 .barnavegacao a:hover {
     background-color: rgb(107, 207, 174);
+    padding: 20px;
+    text-decoration-line: none;
 }
 
 .conteudo {
     background-color: rgb(44, 211, 155);
     text-align: center;
-    padding: 20px;
+    padding: 60px;
     margin: auto;
 }
 
@@ -27,3 +50,63 @@
     padding: 20px;
     margin: auto;
 }
+
+p {
+    font-size: larger;
+    
+}
+
+h2 {
+    background-color: rgb(25, 177, 126);
+    text-align: center;
+    padding: 40px;
+    margin: auto; 
+
+}
+
+ul {
+    background: rgb(107, 207, 174);
+    padding: 70px;
+    margin: auto;
+
+  }
+
+ul li {
+    background-color:  rgb(59, 175, 136) ;
+    margin: 5px;
+  }
+
+  input {
+    
+    padding: 10px;
+    margin: auto;
+    display: inline-block;
+    width: 500px;
+    
+  }
+  
+
+#tab-estoque {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+
+}
+
+  #tab-estoque td, #tab-estoque th {
+    border: 1px solid rgb(59, 175, 136);
+    padding: 8px;
+  }
+
+  #tab-estoque tr:nth-child(even){
+    background-color: #cde9cf;
+    }
+
+    #tab-estoque th {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        text-align: center;
+        background-color:rgb(44, 211, 155);
+        color: black;
+      }
