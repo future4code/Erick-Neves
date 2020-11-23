@@ -1,55 +1,184 @@
-        body {
-            margin: 0;
-        }
-        
-        .cabeçalho {
-            text-align: center;
-            margin: auto;
-        }
-        
-        .barnavegacao {
-            text-align: right;
-            padding: 20px;
-        }
-        
-        .barnavegacao a {
-            background-color: rgb(91, 102, 98);
-            padding: 20px;
-            text-decoration-line: none;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        
-        .barnavegacao a:hover {
-            background-color: rgb(43, 58, 87);
-            padding: 20px;
-            text-decoration-line: none;
-        }
-        
-        .conteudo {
-            text-align: center;
-            padding: 60px;
-            margin: auto;
-        }
-        
-        .rodape {
-            background-color: rgb(91, 102, 98);
-            text-align: center;
-            padding: 20px;
-            margin: auto;
-        }
-        
-        p {
-            font-size: larger;
-        }
-        
-        h2 {
-            background-color: rgb(91, 102, 98);
-            text-align: center;
-            padding: 40px;
-            margin: auto;
-        }
-        
-        .flex-intro {
-            display: flex;
-            background-color: rgb(255, 255, 255);
-        }
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@500&display=swap');
+
+* {
+    margin: 0;
+    font-family: 'Arimo', sans-serif;
+}
+
+.barnavegacao {
+    text-align: right;
+    padding: 20px;
+    margin: 0 0 50px 0;
+    background-color: rgba(0, 60, 255, 0.24);
+}
+
+.barnavegacao a {
+    background-color: rgba(0, 60, 255, 0.651);
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 2px solid rgb(0, 85, 255);
+}
+
+.barnavegacao a:hover {
+    background-color: rgb(0, 85, 255);
+    padding: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+#Logo-EN {
+    float: left;
+    height: 40px;
+    width: 40px;
+}
+
+.linha1-cabeç {
+    text-align: center;
+    margin: 40px 200px;
+    font-size: 40px;
+    color: rgb(6, 6, 141);
+    text-shadow: 2px 2px 1px  rgb(0, 85, 255);
+}
+
+#linha2-cabeç {
+    color: rgb(14, 14, 226);
+    font-size: 32px;
+    margin: auto;
+    text-shadow: 1px 1px 1px  rgb(0, 85, 255);
+    
+}
+
+#foto-perfil {
+    padding: 35px 35px;
+    width: 170px;
+    height: 170px;
+    /* margin-right: 15px; */
+    /* margin: 0px -200px 0px 200px; */
+    margin: auto;
+    border-radius: 35%;
+    box-shadow: 1px 5px 1px  rgba(0, 85, 255, 0.774);
+    
+}
+
+.conteudo {
+    text-align: justify;
+    padding: 60px;
+    margin: auto;
+    color: rgb(6, 6, 141);
+}
+
+#foto-projeto {
+    padding: 35px 35px;
+    width: 400px;
+    height: 170px;
+    margin-right: 15px;
+    margin: 0px -100px 30px 200px;
+   
+    box-shadow: 1px 5px 1px  rgba(0, 85, 255, 0.774);
+}
+
+.linha1-projet {
+    text-align: center;
+    margin: 40px 200px;
+    font-size: 30px;
+    color: rgb(6, 6, 141);
+    
+}
+
+.rodape {
+    background-color: rgb(91, 102, 98);
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+}
+
+
+p {
+    font-size: larger;
+}
+
+h2 {
+    background-color: rgb(0, 85, 255);
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+    margin: 30px;
+    border: 1px solid rgb(0, 85, 255);
+    box-shadow: 13px 13px 13px 2px rgba(0, 85, 255, 0.774);
+    text-shadow: 5px 5px 5px rgb(6, 6, 141);
+}
+
+.flex-intro {
+    display: flex;
+    background-color: rgb(255, 255, 255);
+}
+
+.flex-lista {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-lista2 {
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    color: rgb(6, 6, 141);
+    
+}
+
+
+
+.flex-conteudo {
+    float: inline-start;
+    background-color: rgb(255, 255, 255);
+}
+
+/* Formulário de contato: */
+
+.campo {
+    
+    margin: 20px 30px;
+    display: block;  
+}
+
+.campo label {
+    margin-bottom: 0.2em;
+    color: rgb(6, 6, 141);
+    display: block;
+}
+
+/* Para estilizar class "campo" de input individuais de forma unica */
+.campo input[type="text"],
+.campo input[type="email"],
+.campo input[type="url"],
+.campo input[type="tel"],
+.campo textarea {
+    padding: 7px;
+    border: 1px solid rgb(0, 85, 255);
+    box-shadow: 5px 5px 5px rgba(0, 85, 255, 0.774);
+    display: block;
+}
+
+.botao {
+    font-size: 20px;
+    background: rgb(0, 85, 255);
+    border: 0;
+    margin: 0px 0px 30px 30px;
+    color: white;
+    padding: 10px 50px;
+    box-shadow: 5px 5px 5px rgba(0, 85, 255, 0.774);
+    text-shadow: 3px 3px 3px rgb(6, 6, 141);
+}
+
+.botao:hover {
+    background: rgb(6, 6, 141);
+    box-shadow: inset 2px 2px 2px rgb(6, 6, 141);
+    text-shadow: none;
+}
+
+.botao, select, label.checkbox {
+    cursor: pointer;
+}
