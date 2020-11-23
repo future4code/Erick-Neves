@@ -73,6 +73,16 @@ div img {
     background-color: #2274a5;
     color: white;
     padding-top: 15vh;
+
+}
+
+#container-de-lista {
+    background-color: #2274a5;
+    color: white;
+
+    list-style-type: decimal;
+    display: block;
+
 }
 
 #container-de-descricao>ol {
