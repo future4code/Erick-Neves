@@ -3,10 +3,12 @@
   *  ESTILOS GERAIS 
   *
   **/
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 * {
     margin: 0;
     padding: 0;
+
 }
 
 h2 {
@@ -107,6 +109,8 @@ div:last-child {
 
 table {
     width: 60%;
+    text-align: center;
+    margin: auto;
 }
 
 td button {
