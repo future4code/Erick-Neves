@@ -1,0 +1,155 @@
+/* GRID GARDEN */
+
+ /* Level 1: */
+#garden {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+  }
+  
+  #water {
+  grid-column-start: 3;
+  }
+
+/* Level 2: */
+#garden {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+  }
+  
+  #poison {
+  grid-column-start: 5;
+  }
+
+/* Level 3: */
+#garden {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+  }
+  
+  #water {
+    grid-column-start: 1;
+  grid-column-end: 4;
+  }
+
+/* Level 4: */
+#garden {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+  }
+  
+  #water {
+    grid-column-start: 5;
+  grid-column-end: -5;
+  }
+
+/* Level 5: */
+#garden {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+  }
+  
+  #water {
+    grid-column-start: 1;
+  grid-column-end: -2;
+  }
+
+/* Level 6: */
+#garden {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+  }
+  
+  #poison {
+  grid-column-start: -3;
+  }
+
+/* Level 7: */
+#garden {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+  }
+  
+  #water {
+    grid-column-start: 2;
+  grid-column-end: span 2;
+  }
+
+/* Level 8: */
+#garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#water {
+  grid-column-start: 1;
+grid-column-end: span 5;
+}
+
+/* Level 9: */
+#garden {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+  }
+  
+  #water {
+  grid-column-start: span 3;
+    grid-column-end: 6;
+  }
+
+/* Level 10: */
+#garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#water {
+grid-column: 4 / 6;
+}
+
+/* Level 11: */
+
+/* Level 12: */
+
+/* Level 13: */
+
+
+/* Level 14: */
+
+
+/* Level 15: */
+
+/* Level 16: */
+
+/* Level 17: */
+
+
+/* Level 18: */
+
+
+/* Level 19: */
+
+
+
+/* Level 20: */
+
+
+/* Level 21: */
+
+
+/* Level 22: */
+
+
+/* Level 23: */
+
+
+/* Level 24: */
