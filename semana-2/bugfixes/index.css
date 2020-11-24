@@ -22,6 +22,9 @@ h2 {
 input {
     height: 20px;
     width: 500px;
+    border-top: 2px;
+   
+     
 }
 
 button:focus {
@@ -125,7 +128,6 @@ td button {
     color: black;
     cursor: pointer;
     
-
 }
 
 button:hover {
