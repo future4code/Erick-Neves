@@ -1,0 +1,23 @@
+
+body {
+  /* font-family: */
+}
+
+.header {
+  grid-area: header;
+  
+}
+
+
+.grid-container-labetube {
+  display: grid;
+  grid-template-columns: auto;
+  
+} 
+
+
+.footer {
+  grid-area: footer;
+
+}
+
