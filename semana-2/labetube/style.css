@@ -1,23 +1,141 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+   
+}
+
 
 body {
-  /* font-family: */
+    background-color: rgba(8, 239, 255, 0.507);  
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.header {
-  grid-area: header;
-  
+
+.grid-header {
+    display: flex;
+    align-items: center;
+    /* border: 1px solid black; */
+    background-color: rgba(8, 239, 255, 0.74);
+    box-shadow: 10px 10px 10px rgb(15, 153, 163);
+    margin: 0vw 0 5vw 0;
+    height: 13vh;
+    width: 99,9vw;
+    
 }
 
+#seach {
+    margin-left: 65vw;
+    height: 6vh;
+    width: 25vw;
+    font-size: 1.5em;
+    background-color: rgb(148, 222, 231);
+    background-image: url(./imagensLabtub/pesquisa.png);
+    background-repeat: no-repeat;
+    padding-left: 4vw;
+    cursor: pointer;
+}
 
 .grid-container-labetube {
   display: grid;
-  grid-template-columns: auto;
-  
-} 
-
-
-.footer {
-  grid-area: footer;
-
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-row: 1fr 1fr;
+  grid-gap: 5px;
+  margin: 3vw;
+  width: 97%;
+  height: 30%;
+  padding: 10vh;
 }
+
+
+.window-labeltub {
+    border: 1px solid black;
+    height: 40vh;
+    width: 15vw;
+    display: flex;
+    margin: 1vw;
+    background-color: rgb(0, 244, 252);
+    
+}
+
+
+a {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+    color: rgb(5, 64, 71); 
+}
+
+section img {
+    margin: initial;
+    height: 30vh;
+    width: 14.85vw;
+    
+    
+}
+
+article {
+    text-align: center;
+    margin: 1vh;
+    
+}
+
+.container-video1 {
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+       
+  }
+  
+  .window-labeltub-pag1 {
+      
+      height: 40vh;
+      width: 15vw;
+      display: flex;
+      margin: 1vw;
+      
+  }
+  
+  #videoau {
+      height: 500px;
+      
+  }
+
+.window-labeltub-pag2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video2 {
+    height: 40vh;
+    width: 20vw;
+    margin: 0px;
+    
+}
+
+
+.grid-footer {
+    background-color: rgba(8, 239, 255, 0.753);
+    text-align: center;
+    padding: 20px;
+    margin: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 200px 0 0 0;
+}
+
+.grid-footer-secudarias {
+    background-color: rgba(8, 239, 255, 0.753);
+    text-align: center;
+    padding: 20px;
+    margin: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 400px 0 0 0;
+}
+
+
+
 
