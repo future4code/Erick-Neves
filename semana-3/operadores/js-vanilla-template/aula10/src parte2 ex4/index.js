@@ -1,22 +1,11 @@
-//3. Faça um programa, seguindo os passos:
-//a. Crie um array vazio e guarde-o em uma variável, chamada `listaDeTarefas`
-//b. Pergunte ao usuário 3 tarefas que ele precise realizar no dia e armazene-as, uma por uma, no array
-//c. Imprima o array na tela
-//d. Peça ao usuário que digite o **índice** de uma tarefa que ele já realizou: 0, 1 ou 2 
-//e. Remova da lista o item de índice que o usuário escolheu.
-//f. Imprima o array na tela
+//4. Faça um programa que pergunte ao usuário seu nome e seu e-mail. Em seguida, imprima na tela a seguinte mensagem:
+//
+//    O e-mail `emailDoUsuario` foi cadastrado com sucesso. Seja bem-vinda(o), `nomeDoUsuario`!
 
-let listaDeTarefas = []
+let nomeDoUsuario = prompt("Qual é seu nome?")
+let emailDoUsuario = prompt("Qual é seu email?")
 
-listaDeTarefas.push(prompt("Qual a sua primeira tarefa do dia?"))
-listaDeTarefas.push(prompt("Qual a sua segunda tarefa do dia?"))
-listaDeTarefas.push(prompt("Qual a sua terceira tarefa do dia?"))
+console.log('O e-mail' `${emailDoUsuario} foi cadastrado com sucesso. Seja bem-vinda(o), ${nomeDoUsuario}`)
 
-console.log(listaDeTarefas)
 
-let indiceDaTarefa = prompt("Digite o índece de uma tarefa já realizada começando por 0, 1 ou 2:")
 
-let indiceDaTarefaNumero = Number(indiceDaTarefa)
-listaDeTarefas.splice(indiceDaTarefaNumero, 1)
-
-console.log(listaDeTarefas)
