@@ -9,32 +9,33 @@
  * 
  * 
  * 
- */
+ */  
 
-   alert("Bem vindo ao jogo de Blackjack!")
+const mensagem = console.log("Bem vindo ao jogo de Blackjack!")
 
-if(confirm("Deseja iniciar uma nova rodada?")) {
-   const carta = comprarCarta()
-   const pc1 = comprarCarta()
-   const pc2 = comprarCarta()
-   const user1 = comprarCarta()
-   const user2 = comprarCarta()
+let jogo = confirm("Deseja iniciar uma nova rodada?")
 
-   const somaPc = pc1.valor + pc2.valor
-   const somaUser = user1.valor + user2.valor
+if(jogo) {
+      const carta1Pc = comprarCarta()
+      const carta2Pc = comprarCarta()
+      const carta1User = comprarCarta()
+      const carta2User = comprarCarta()
 
-   console.log("Computador:", pc1.texto, pc2.texto, "Pontuação:", somaPc)
-   console.log("Usuário:", user1.texto, user2.texto, "Pontuação:", somaUser)
+      const ResulSomaPc = carta1Pc.valor + carta2Pc.valor
+      const ResulSomaUser = carta1User.valor + carta2User.valor
 
-   if (somaUser >= 17 && somaUser <= 21 && somaPc < 17){
-      alert("Usuário venceu")
-   } else if (somaPc >= 17 && somaUser <= 21 && somaPc < 17){
-      alert("Computador venceu")
-   } else {
-      alert("Empate não alcançou 21!")
-   }
+      console.log("Usuário:", carta1User.texto, carta2User.texto, "Pontuação:", ResulSomaUser)
+      console.log("Computador:", carta1Pc.texto, carta2Pc.texto, "Pontuação:", ResulSomaPc)
+
+      if (ResulSomaUser > ResulSomaPc) {
+         console.log("Usuário venceu!")
+      } else if (ResulSomaUser < ResulSomaPc) {
+         console.log("Computador venceu!")
+      } else if (ResulSomaUser === ResulSomaPc) {
+         console.log("Empate!")
+      }
 
 } else {
-	console.log("Fim de jogo")
+	console.log("Fim de jogo!")
 }
 
