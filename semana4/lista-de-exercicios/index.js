@@ -26,6 +26,16 @@
 // o switch default pois o tipo informado não existe, resultando em uma mensagem de caixa alert com a mensagem de 
 // Tipo informado incorreto.
 
+//EXERCICIO 3:
+// Neste exercicio temos um código que declara variáveis constantes sendo a de nome número com com um array de 
+// números, as de nome array1 e array2 vazios momentaneamente até se execute o loop for of, onde existem a condicional
+// em que se a variável do numero do array de nossa const numeros dividido por 2 tiver resto zero, vai se incrementar
+// pelo push o numero ao array1, ou seja todos os pares da nossa const numeros que possui um array com varios números
+// que vão ser testados pela condicional um a um, pelo loop, e se não for um número com resto zero, ou seja impar vai
+// incrementar o numero ao array2.
+//  Fora do loop coloca para imprimir a mensagem de quantidade total de número seguida por todos os número do nosso 
+// array numeros, através de length que pega toda a extensão do array, em seguida imprime todos o comprimento do
+// array1(pares) e em seguida todo o comprimento do array2(impares)
 
 
 
