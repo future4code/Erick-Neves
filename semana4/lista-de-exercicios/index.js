@@ -312,3 +312,53 @@
 // }
 
 // console.log(mudarParaAnonimo(pessoaObj))
+
+
+//------------------------------------Exercícios de Funções de array --------------------------------------------------------
+
+
+// 1. Considere um array com o seguinte formato:
+
+    
+    // const pessoas = [
+    //     { nome: "Pedro", idade: 20 },
+    //     { nome: "João", idade: 10 },
+    //     { nome: "Paula", idade: 12 },
+    //     { nome: "Artur", idade: 89 } 
+    // ]
+   
+
+//     a) Faça uma função que retorne um **novo array** só com os adultos (pessoas com idade igual ou superior a 20)
+
+// const adultosApartirDe20 = pessoas.filter((pessoa) =>{
+//     return pessoa.idade >= 20
+//   })
+
+// console.log(adultosApartirDe20)
+
+
+//     b) Faça uma função que retorne um **novo array** só com as crianças/adolescentes (pessoas com idade inferior a 20)
+
+// const pessoaInferiorA20 = pessoas.filter((pessoa) =>{
+//     return pessoa.idade < 20
+//   })
+
+// console.log(pessoaInferiorA20)
+
+
+
+// 2. Em todos os itens deste exercício, você terá que escrever uma **função** cuja entrada seja um **array**.
+//  Para testes, considere: `const array = [1, 2, 3, 4, 5, 6]`.
+
+//     a) Escreva uma função que **retorne** um array com as entradas multiplicadas por 2. 
+//     Isto é `[2, 4, 6, 8, 10, 12]`.
+
+
+
+//     b) Escreva uma função que **retorne** um array com as entradas multiplicadas por 3 e como strings. 
+//     Isto é: `["3", "6", "9", "15", "18"]` 
+
+
+
+//     c) Escreva uma função que **retorne** um array de strings dizendo: "${número} é par/impar". 
+//     Isto é: `["1 é impar", "2 é par", "3 é impar", "4 é par", "5 é impar", "6 é par"]`
