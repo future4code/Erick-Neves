@@ -319,7 +319,8 @@
 
 // 1. Considere um array com o seguinte formato:
 
-    
+// Para melhor visualizar programa desative comentários com ctrl + ~ (windows) a partir da linha aqui abaixo:
+
     // const pessoas = [
     //     { nome: "Pedro", idade: 20 },
     //     { nome: "João", idade: 10 },
@@ -380,3 +381,170 @@
 //     }
 //   })
 // console.log(paridade)
+
+
+
+// 3. Imagine que você trabalhe num parque de diversões, como desenvolvedor(a). As suas tarefas são sempre com o 
+// intuito de ajudar a automação de alguns processos internos do parque. Uma das atrações principais dele é a 
+// montanha russa do terror. As filas são muito grandes e todas as pessoas de várias idades insistem entrar no
+//  brinquedo, mesmo sabendo que não podem. Considere, então, essas pessoas:
+
+// Para melhor visualizar programa desative comentários com ctrl + ~ (windows) a partir da linha aqui abaixo:
+
+//     const pessoas = [
+//     	{ nome: "Paula", idade: 12, altura: 1.8},
+//     	{ nome: "João", idade: 20, altura: 1.3},
+//     	{ nome: "Pedro", idade: 15, altura: 1.9},
+//     	{ nome: "Luciano", idade: 22, altura: 1.8},
+//     	{ nome: "Artur", idade: 10, altura: 1.2},
+//     	{ nome: "Soter", idade: 70, altura: 1.9}
+//     ]
+    
+
+// //     A regra para entrar na montanha russa do terror é: ter, no mínimo, 1.5m de altura; ser mais velho do que 14
+// //      anos e mais novo do que 60 anos.
+
+// //     a) Escreva uma **função** que **receba** este array e **devolva** outro array somente com as pessoas que
+// //      **tem permissão de entrar** no brinquedo
+
+// const pessoasQentram = pessoas.filter((a) => {
+//     return a.altura >= 1.5 && a.idade >= 14 && a.idade <= 60
+//   })
+
+//   console.log(`Pessoas que Tem requisitos para entrar:`, pessoasQentram)
+
+// //     b) Escreva uma **função** que **receba** este array e **devolva** outro array somente com as pessoas que
+// //      **não podem entrar** no brinquedo.
+
+// const pessoasQNaoEntram = pessoas.filter((a) => {
+//     return a.altura < 1.5 || a.idade < 14 || a.idade > 60
+//   })
+
+// console.log(`Pessoas que NÃO tem requisitos para entrar:`, pessoasQNaoEntram)
+
+
+
+// 4. Você foi contratado por um escritório médico para gerar e-mails automáticos para seus clientes, 
+// lembrando-os de sua consulta marcada; ou avisa-los que foi cancelada. Considere, então, essas consultas:
+
+    // A sua tarefa é criar um **array** com os e-mails para cada um deles. Existem dois padrões de e-mail. 
+
+    // Para as consultas **não canceladas** é:
+
+    // ```
+    // Olá, ${ Sr./Sra. } ${ nome da pessoa }. Estamos enviando esta mensagem para
+    // ${ lembrá-lo / lembrá-la } da sua consulta no dia ${ data da consulta }. Por favor, acuse
+    // o recebimento deste e-mail.
+    // ```
+
+    // Para as consultas **canceladas** é:
+
+    // ```
+    // Olá, ${ Sr./Sra. } { nome da pessoa }. Infelizmente, sua consulta marcada
+    // para o dia ${ data da consulta } foi cancelada. Se quiser, pode entrar em 
+    // contato conosco para remarcá-la
+    // ```
+
+// const consultas = [
+// 	{ nome: "João", genero: "masculino", cancelada: true, dataDaConsulta: "01/10/2019" },
+// 	{ nome: "Pedro", genero: "masculino", cancelada: false, dataDaConsulta: "02/10/2019" },
+// 	{ nome: "Paula", genero: "feminino", cancelada: true, dataDaConsulta: "03/11/2019" },
+// 	{ nome: "Márcia", genero: "feminino", cancelada: false, dataDaConsulta: "04/11/2019" }
+// ]
+
+// const emails = consultas.map((a) => {
+//   let emailFinal = "Olá, "
+
+//   if(a.cancelada) {
+//         if(a.genero === "feminino") {
+//         emailFinal += "Sra. "
+//         } else {
+//         emailFinal += "Sr. "
+//         }
+
+//         emailFinal += a.nome + ". "
+
+//         emailFinal += "Estamos enviando esta mensagem para "
+
+//         if(a.genero === "feminino") {
+//         emailFinal += "lembrá-la "
+//         } else {
+//         emailFinal += "lembrá-lo "
+//         }
+
+//         emailFinal += "da sua consulta no dia " + a.dataDaConsulta + ". "
+//         emailFinal += "Por favor, acuse o recebimento deste-email."
+//         console.log(emailFinal)
+//   } else {
+
+//         if(a.genero === "feminino") {
+//         emailFinal += "Sra. "
+//         } else {
+//         emailFinal += "Sr. "
+//         }
+
+//         emailFinal += a.nome + ". "
+
+//         emailFinal += "Infelizmente sua consulta marcada para o dia "
+
+//         emailFinal += a.dataDaConsulta + " foi cancelada. "
+//         emailFinal += "Se quiser, pode entrar em contato conosco para remarcá-la."
+//         console.log(emailFinal)
+//   }
+//   return
+// })
+
+// 5. Agora, pediram para você ajudar a fazer uma funcionalidade de um banco digital. Antes de explicar a sua tarefa,
+//  você precisa entender como eles guardam as contas dos clientes. Basicamente, eles salvam o nome do clientes, 
+//  o saldo total e uma lista contendo todas as compras realizadas pelo cliente. Veja abaixo:
+
+//     ```jsx
+//     const contas = [
+//     	{ cliente: "João", saldoTotal: 1000, compras: [100, 200, 300] },
+//     	{ cliente: "Paula", saldoTotal: 7500, compras: [200, 1040] },
+//     	{ cliente: "Pedro", saldoTotal: 10000, compras: [5140, 6100, 100, 2000] },
+//     	{ cliente: "Luciano", saldoTotal: 100, compras: [100, 200, 1700] },
+//     	{ cliente: "Artur", saldoTotal: 1800, compras: [200, 300] },
+//     	{ cliente: "Soter", saldoTotal: 1200, compras: [] }
+//     ]
+//     ```
+
+//     A sua tarefa é: faça uma função que receba um **array** com os objetos do tipo acima e atualize o 
+//     **saldo total** individual de cada um, **sem criar um novo** array.
+
+//     Em outras palavras, o **array** do exemplo acima deve ficar assim:
+
+//     ```jsx
+//     [ 
+//     	{ cliente: 'João', saldoTotal: 400, compras: [ 100, 200, 300 ] },
+//     	{ cliente: 'Paula', saldoTotal: 6260, compras: [ 200, 1040 ] },
+//       { cliente: 'Pedro', saldoTotal: -3340, compras: [ 5140, 6100, 100, 2000 ] },
+//       { cliente: 'Luciano', saldoTotal: -1900, compras: [ 100, 200, 1700 ] },
+//       { cliente: 'Artur', saldoTotal: 1300, compras: [ 200, 300 ] },
+//       { cliente: 'Soter', saldoTotal: 1200, compras: [] } 
+//     ]
+//     ```
+
+// const contas = [
+// 	{ cliente: "João", saldoTotal: 1000, compras: [100, 200, 300] },
+// 	{ cliente: "Paula", saldoTotal: 7500, compras: [200, 1040] },
+// 	{ cliente: "Pedro", saldoTotal: 10000, compras: [5140, 6100, 100, 2000] },
+// 	{ cliente: "Luciano", saldoTotal: 100, compras: [100, 200, 1700] },
+// 	{ cliente: "Artur", saldoTotal: 1800, compras: [200, 300] },
+// 	{ cliente: "Soter", saldoTotal: 1200, compras: [] }
+// ]
+
+// contas.forEach((contaNova) => {
+//   let totalDeCompras = 0
+
+//   contaNova.compras.forEach((totalValorCompras) => {
+//     totalDeCompras += totalValorCompras
+//   })
+
+//   contaNova.saldoTotal -= totalDeCompras
+
+//   console.log(contaNova)
+// })
+
+
+
