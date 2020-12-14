@@ -187,7 +187,7 @@
 
 //   console.log(MaiorDivisiveisDifNumeros(20, 2))
 
-//------------------------------------Exercícios de Ordenação de Vetores ----------------------------------
+//------------------------------------Exercícios de Funções ----------------------------------
 
 // 1. Escreva uma função que receba um `array` de números e imprima na tela o segundo maior e o segundo menor número.
 // Em seguida, invoque essa função. (Não é permitido usar funções de ordenação de vetores.)
@@ -230,6 +230,7 @@
 //     }
     
 // variavelDaFuncao()
+
 
 
 
