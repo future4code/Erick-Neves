@@ -328,7 +328,7 @@
     // ]
    
 
-//     a) Faça uma função que retorne um **novo array** só com os adultos (pessoas com idade igual ou superior a 20)
+//a) Faça uma função que retorne um **novo array** só com os adultos (pessoas com idade igual ou superior a 20)
 
 // const adultosApartirDe20 = pessoas.filter((pessoa) =>{
 //     return pessoa.idade >= 20
@@ -337,7 +337,7 @@
 // console.log(adultosApartirDe20)
 
 
-//     b) Faça uma função que retorne um **novo array** só com as crianças/adolescentes (pessoas com idade inferior a 20)
+//b) Faça uma função que retorne um **novo array** só com as crianças/adolescentes (pessoas com idade inferior a 20)
 
 // const pessoaInferiorA20 = pessoas.filter((pessoa) =>{
 //     return pessoa.idade < 20
@@ -350,15 +350,33 @@
 // 2. Em todos os itens deste exercício, você terá que escrever uma **função** cuja entrada seja um **array**.
 //  Para testes, considere: `const array = [1, 2, 3, 4, 5, 6]`.
 
-//     a) Escreva uma função que **retorne** um array com as entradas multiplicadas por 2. 
-//     Isto é `[2, 4, 6, 8, 10, 12]`.
+// const array = [1, 2, 3, 4, 5, 6]
+
+// //a) Escreva uma função que **retorne** um array com as entradas multiplicadas por 2. 
+// //Isto é `[2, 4, 6, 8, 10, 12]`.
+
+// const multiplicadoPor2 = array.map((x) => {
+//     return 2*x
+//   })
+// console.log(multiplicadoPor2) 
+
+// //b) Escreva uma função que **retorne** um array com as entradas multiplicadas por 3 e como strings. 
+// //Isto é: `["3", "6", "9", "15", "18"]` 
+
+// const multiplicadoPor3 = array.map((x) => {
+//     return 3*x
+//   })
+// console.log(multiplicadoPor3) 
 
 
+// //c) Escreva uma função que **retorne** um array de strings dizendo: "${número} é par/impar". 
+// //Isto é: `["1 é impar", "2 é par", "3 é impar", "4 é par", "5 é impar", "6 é par"]`
 
-//     b) Escreva uma função que **retorne** um array com as entradas multiplicadas por 3 e como strings. 
-//     Isto é: `["3", "6", "9", "15", "18"]` 
-
-
-
-//     c) Escreva uma função que **retorne** um array de strings dizendo: "${número} é par/impar". 
-//     Isto é: `["1 é impar", "2 é par", "3 é impar", "4 é par", "5 é impar", "6 é par"]`
+// const paridade = array.map((x) => {
+//     if(x % 2 === 0) {
+//       return (`${x} é par`)
+//     } else {
+//       return (`${x} é impar`)
+//     }
+//   })
+// console.log(paridade)
