@@ -319,8 +319,6 @@
 
 // 1. Considere um array com o seguinte formato:
 
-// Para melhor visualizar programa desative comentários com ctrl + ~ (windows) a partir da linha aqui abaixo:
-
     // const pessoas = [
     //     { nome: "Pedro", idade: 20 },
     //     { nome: "João", idade: 10 },
@@ -493,6 +491,8 @@
 //   }
 //   return
 // })
+
+
 
 // 5. Agora, pediram para você ajudar a fazer uma funcionalidade de um banco digital. Antes de explicar a sua tarefa,
 //  você precisa entender como eles guardam as contas dos clientes. Basicamente, eles salvam o nome do clientes, 
