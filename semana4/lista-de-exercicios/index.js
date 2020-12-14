@@ -232,14 +232,83 @@
 // variavelDaFuncao()
 
 
+//------------------------------------Exercícios de Objetos --------------------------------------------------------
+
+
+// 1. Explique com as suas palavras o que são e quando podemos/devemos utilizar arrays e objetos.
+
+// Arrays são Arranjos de objetos em listas (vetores ordenados identificados por indice ou chave), podemos/devemos utilizar
+// quando queremos representar uma lista de valores ordenados, e também quando queremos acessar um determinado elemento desta 
+// lista, para filtrar maiores e menores, etc.
+
+// Objetos são modelos do mundo real, definidos com variaveis e seus valores, atributos/chaves agrupados. Podemos/devemos 
+// utilizar quando queremos criar um único indivíduo com caracteristicas coerêntes e proprias desse, evitando assim criar varias 
+// variaveis separadas.
+
+
+// 2. Crie uma função chamada `criaRetangulo` que recebe como parâmetros dois lados (`lado1` e `lado2`) 
+// e retorna um objeto com 4 informações: largura (`lado1`), altura (`lado2`), perímetro (`2 * (lado1 + lado2)`) 
+// e área (`lado1 * lado2`).
+
+// function criaRetangulo(lado1, lado2) {
+// 	return {
+// 		largura: lado1,
+// 		altura: lado2,
+// 		perimetro: 2 * (lado1 + lado2),
+// 		area: lado1 * lado2
+// 	}
+// }
+
+// console.log(criaRetangulo(5, 7))
 
 
 
+// 3. Crie um objeto para representar seu filme favorito. Ele deve ter as seguintes 
+// propriedades: título, ano, diretor e atores/atrizes (lista com pelo menos 2 atores/atrizes). 
+// Imprima na tela a seguinte string, baseada nos valores do objeto:
+// `Venha assistir ao filme NOME DO FILME, de ANO, dirigido por DIRETOR e estrelado por ATOR 1, ATRIZ 2, ATOR n`. 
+// A lista de atores/atrizes deve ser impressa inteira, independente do tamanho da lista.
+
+// const filme = {
+// 	nome: "As Crônicas de Nárnia",
+// 	diretor: "Michael Apted",
+// 	ano: 2010,
+// 	atores: ["Georgie Henley", "Will Poulter", "Ben Barnes", "Skandar Keynes", "Anna Popplewell"]
+// }
+
+// let Atores = ""
+
+// filme.atores.forEach((ator, index, array) => {
+// 	if (index !== array.length - 1) {
+// 		Atores += ator + ", "
+// 	} else {
+// 		Atores += ator + "."
+// 	}
+// })
+
+// console.log(`Venha assistir ao filme, ${filme.nome}, de ${filme.ano} dirigido por ${filme.diretor} e estrelado por ` + Atores)
 
 
 
+// 4. Crie um objeto que represente uma pessoa qualquer, com as propriedades de
+//  `nome`, `idade`, `email` e `endereco`. Crie uma função chamada `anonimizarPessoa`, 
+//  que deverá retornar um **novo** objeto com as mesmas propriedades, mas com a string `ANÔNIMO` no lugar do nome.
+//   O objeto original deve ser mantido com o nome da pessoa.
 
+// const pessoaObj = {
+// 	nome: "Erick",
+// 	idade: 25,
+// 	email: "erick.neves.projetos@gmail.com",
+// 	endereco: "Rua Arquiteto Henrique"
+// }
 
+// function mudarParaAnonimo(pessoa) {
+// 	return {
+// 		nome: "ANÔNIMO",
+// 		idade: pessoa.idade,
+// 		email: pessoa.email,
+// 		endereco: pessoa.endereco
+// 	}
+// }
 
-
-
+// console.log(mudarParaAnonimo(pessoaObj))
