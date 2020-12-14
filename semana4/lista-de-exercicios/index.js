@@ -183,7 +183,62 @@
 //     }
 //     console.log("A diferença entre eles é ", maiorNumero - menorNumero)
 
-//     return
 //   }
 
 //   console.log(MaiorDivisiveisDifNumeros(20, 2))
+
+//------------------------------------Exercícios de Ordenação de Vetores ----------------------------------
+
+// 1. Escreva uma função que receba um `array` de números e imprima na tela o segundo maior e o segundo menor número.
+// Em seguida, invoque essa função. (Não é permitido usar funções de ordenação de vetores.)
+
+
+// let array = [10, 23, 45, 78, 90, 52, 35, 67, 84, 22]
+
+// function segundoMaiorEsegundoMenor(listaNumeros) {
+//     let maiorNumero = -Infinity;
+//     let menorNumero = Infinity;
+//     let segundoMaiorNumero = -Infinity;
+//     let segundoMenorNumero = Infinity;
+    
+//     for (let numero of listaNumeros) {
+//         if (numero > maiorNumero) {
+//             maiorNumero = numero;
+//         }
+//         if (numero < menorNumero) {
+//             menorNumero = numero;
+//         }   
+//     }
+//     for (let numero of listaNumeros) {
+//         if (numero > segundoMaiorNumero && numero < maiorNumero) {
+//             segundoMaiorNumero = numero;
+//         }
+//         if (numero < segundoMenorNumero && numero > menorNumero) {
+//             segundoMenorNumero = numero;
+//         }   
+//     }
+//     console.log("O segundo maior é o ", segundoMaiorNumero)
+//     console.log("O segundo menor é o ", segundoMenorNumero)
+// }
+
+// console.log(segundoMaiorEsegundoMenor(array))
+
+// 2. Escreva uma **função não nomeada** que faça um `alert("Hello Labenu!");`. Em seguida, invoque essa função.
+
+// const variavelDaFuncao = () => {
+//      alert("Hello Labenu!")
+//     }
+    
+// variavelDaFuncao()
+
+
+
+
+
+
+
+
+
+
+
+
