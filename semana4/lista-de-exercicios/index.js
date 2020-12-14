@@ -422,6 +422,7 @@
 
 
 
+
 // 4. Você foi contratado por um escritório médico para gerar e-mails automáticos para seus clientes, 
 // lembrando-os de sua consulta marcada; ou avisa-los que foi cancelada. Considere, então, essas consultas:
 
