@@ -58,15 +58,25 @@ export class PagListaUsuarios extends React.Component {
         this.getAllUsers()
     }
 
-    getAllUsers = () => {
-        axios.get(baseUrl, axiosConfig)
-            .then((response) => {
-                this.setState({ users: response.data })
-            })
-            .catch((error) => {
-                console.log(error)
-            })
-    }
+    // getAllUsers = () => {
+    //     axios.get(baseUrl, axiosConfig)
+    //         .then((response) => {
+    //             this.setState({ users: response.data })
+    //         })
+    //         .catch((error) => {
+    //             console.log(error)
+    //         })
+    // }
+
+    getAllUsers = async () => {
+        try {
+          const response = await axios.get(baseUrl, axiosConfig)
+          console.log(response.data)
+          this.setState({users: response.data})
+        } catch(error) {
+          console.log(error)
+        }
+      }
 
     deleteUser = (id) => {
         axios.delete(`${baseUrl}/${id}`, axiosConfig)
