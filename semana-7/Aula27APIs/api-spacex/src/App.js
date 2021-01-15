@@ -1,60 +1,97 @@
 import React from "react";
 import "./App.css";
 import axios from 'axios'
+import styled from "styled-components";
+
+const BoxLaunchs = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 70%;
+  border: 2px solid red;
+  height: 50%;
+  margin: auto;
+  background-color: black;
+  color: white;
+
+  h3, p, a {
+    margin: 15px 15px;
+    
+  }
+
+`;
+
+const BoxLista = styled.div`
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  background-color: #1C1C1C;
+  color: red;
+  padding: 1%; 
+  
+`;
+
+const BoxImg = styled.div`
+  
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  padding: 2%;
+
+  img {
+    height: 90%;
+    width: 90%;
+    margin: 20px;
+    
+  }
+
+`;
+
 
 export default class App extends React.Component {
   state = {
     launches: [],
-    imgrocket: "",
   }
 
   componentDidMount = () => {
     this.getLaunches()
   }
 
-  getLaunches = () => {
-    axios.get('https://api.spacexdata.com/v4/launches/past')
-    .then((res) => {
-      this.setState({launches: res.data})
-    })
-    .catch((err) => {
-      console.log(err)
-    })
+  getLaunches = async () => {
+    try {
+      const resp = await axios.get('https://api.spacexdata.com/v4/launches/past')
+      this.setState({launches: resp.data})
+    }
+    catch(error) {
+      console.log(error)
+    }
   }
 
-
-  getImgRocket = (patch) => {
-    axios
-    .get(`https://api.spacexdata.com/v4/launches/${patch}`)
-    .then((res) => {
-      console.log(res.data.small)
-      this.setState({imgrocket: res.date.small})
-    })
-    .catch((err) => {
-      console.log(err)
-    })
-  }
 
   render() {
     return (
-      <div className="App">
-        <h1>Lista de Lançamentos da SpaceX</h1>
+      <BoxLista>
+        <h1>Lançamentos da SpaceX</h1>
         {this.state.launches.map((launch) => {
           return (
-            <div key={launch.id}>
-              <div>
-              <img src={this.state.imgrocket} alt={"rocket"} />
-              </div>
+            <BoxLaunchs key={launch.id}>
+              <BoxImg>
+              <img src={launch.links.patch.small} alt={"rocket-img"} />
+              </BoxImg>
+              <h3>{launch.flight_number}º</h3>
               <h3>{launch.name}</h3>
               <p>{launch.details}</p>
-              <p>Data local do lançamento: {launch.date_local}</p>
+              <div>Data local do lançamento:<p>{launch.date_local}</p></div>
               <a href={launch.links.webcast} target="_blank">Vídeo do lançamento</a><br />
-              <a href={launch.links.wikipedia} target="_blank">Saber mais</a>
-              <hr />
-            </div>
+              <a href={launch.links.wikipedia} target="_blank">Saiba mais</a>
+              
+            </BoxLaunchs>
           )
         })}
-      </div>
+      </BoxLista>
     );
   }
 }
