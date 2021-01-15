@@ -61,7 +61,7 @@ export class PagListaPlayL extends React.Component {
     getAllPlaylists = () => {
         axios.get(baseUrl, axiosConfig)
             .then((response) => {
-                this.setState({ playlists: response.data })
+                this.setState({ playlists: response.data.result.list })
             })
             .catch((error) => {
                 console.log(error)
