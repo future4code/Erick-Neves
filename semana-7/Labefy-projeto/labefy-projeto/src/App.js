@@ -2,7 +2,6 @@ import React from "react";
 import "./App.css";
 import styled from "styled-components"
 import { PagPlayL } from "./pages/PagPlayL";
-import { PagListaPlayL } from "./pages/PagListaPlayL";
 
 const BoxApp = styled.div`
   display: flex;
@@ -33,21 +32,12 @@ const BtnPage = styled.button`
 ` 
 
 export default class App extends React.Component {
-  state = {
-    page: true
-  };
-
-  changePage = () => {
-    this.setState({ page: !this.state.page });
-  };
 
   render() {
     return (
       <BoxApp>
         <h1>Labefy</h1>
-        {this.state.page ? <PagPlayL /> : <PagListaPlayL />}
-
-        <BtnPage onClick={this.changePage}> {this.state.page ? 'Lista de PlayLists' : 'Criar PlayList'} </BtnPage>
+        <PagPlayL />
 
       </BoxApp>
     );
