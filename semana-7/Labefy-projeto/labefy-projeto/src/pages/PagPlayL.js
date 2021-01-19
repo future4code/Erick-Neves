@@ -15,6 +15,7 @@ const BoxCreatePlay = styled.div`
   border: 1px solid greenyellow;
   box-shadow: 1px 1px 15px green;
   border-radius: 9px;
+  
 `
 const BtnCreate = styled.button`
   margin: 15px;
@@ -34,16 +35,39 @@ const BtnCreate = styled.button`
 const InputForm = styled.input`
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: flex-start;
+    border-radius: 5px;
+    font-size: 13px;
+    padding: 0.5rem 70px;
+    font-weight: 500;
+    &:hover {
+        background-color: green;
+        
+    };
+ 
+`
+const BoxAddMusic = styled.div`
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
     font-size: 13px;
     padding: 0.3rem 35px;
     font-weight: 500;
-    &:hover {
-        background-color: green;
-        
-    };  
+   margin: 10px;
+
+   div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 7px;
+    font-size: 13px;
+    font-weight: 500;
+  }
 `
 
 // Styled da lista playlist criada -----------------------------------------------------------------
@@ -59,17 +83,7 @@ const BoxLista = styled.div`
     box-shadow: 1px 1px 15px green;
     border-radius: 9px;
 `
-const BoxListaMusic = styled.div`
-    display: flex;
-    flex-direction: column;
-    text-align: right;
-    justify-content: space-evenly;
-    
-    width: 70vw;
-    border: 1px solid greenyellow;
-    box-shadow: 1px 1px 15px green;
-    border-radius: 9px;
-`
+
 const BoxListaPlay = styled.div`
     display: flex;
     flex-direction: column;
@@ -121,7 +135,7 @@ export class PagPlayL extends React.Component {
 
   componentDidMount = () => {
     this.getAllPlaylists();
-    // this.getPlaylistMusicTrack()
+    // this.getPlaylistMusicTrack();
     // this.setState({ openPlaylistTracks: false });
     
 }
@@ -153,8 +167,8 @@ export class PagPlayL extends React.Component {
 
     console.log('body', body)
 
-    axios.post(baseUrl, body, axiosConfig)
-    .then((response) => {
+    const request = axios.post(baseUrl, body, axiosConfig)
+    request.then((response) => {
       this.getAllPlaylists();
       alert("Play List criada com sucesso!");
       this.setState({inputNamePlaylist: ''})
@@ -166,8 +180,8 @@ export class PagPlayL extends React.Component {
   }
 
   getAllPlaylists = () => {
-    axios.get(baseUrl, axiosConfig)
-        .then((response) => {
+    const request = axios.get(baseUrl, axiosConfig)
+        request.then((response) => {
             this.setState({ playlists: response.data.result.list })
         })
         .catch((error) => {
@@ -177,8 +191,8 @@ export class PagPlayL extends React.Component {
 
 
   deletePlaylist = (id) => {
-      axios.delete(`${baseUrl}/${id}`, axiosConfig)
-          .then((response) => {
+    const request = axios.delete(`${baseUrl}/${id}`, axiosConfig)
+          request.then((response) => {
               this.getAllPlaylists()
           })
           .catch((error) => {
@@ -198,14 +212,14 @@ export class PagPlayL extends React.Component {
       url: this.state.inputUrl,
     }
 
-    axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${id}/tracks`, body,
+    const request = axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${id}/tracks`, body,
     {
       headers: {
         Authorization: "erick-neves-epps",
       }
     }
   )
-    .then((response) => {
+    request.then((response) => {
       alert("Música criada com sucesso!")
       // this.getPlaylistMusicTrack()
     })
@@ -229,7 +243,7 @@ export class PagPlayL extends React.Component {
             })
             .catch((error) => {
                 console.log(error)
-                alert("Erro ao pegar musica da playlist")
+                
             })
     }
   
@@ -242,9 +256,9 @@ export class PagPlayL extends React.Component {
         }
       }
     ).then((response) => {
-      this.setState({ allTracks: response.data.result.tracks })
+      this.setState({ tracks: response.data.result.tracks })
     }).catch((error) => {
-      alert('nao posso mostrar as musicas :(')
+      console.log('error')
     })
   }
   
@@ -252,26 +266,49 @@ export class PagPlayL extends React.Component {
 
 // ----- deletar, abrir janela, da parte da musica/track da janela de acesso da musica
 
-  // deleteTrackFromPlaylist = (id) => {
-  //     axios.delete(`${baseUrl}/${id}/tracks`, axiosConfig)
-  //         .then((response) => {
-  //             this.getPlaylistMusicTrack()
-  //         })
-  //         .catch((error) => {
-  //             console.log(error)
-  //             alert("Erro ao deletar track")
-  //         })
-  // }
+  deleteTrackFromPlaylist = (id) => {
+      axios.delete(`${baseUrl}/${id}/tracks`, axiosConfig)
+          .then((response) => {
+              this.getPlaylistMusicTrack()
+          })
+          .catch((error) => {
+              console.log(error)
+              alert("Erro ao deletar track")
+          })
+  }
   
   
 
   render() {
 
-    // const playlistsRender = this.state.playlists.map((playlist) => {
+    const playlistsRender = this.state.playlists.map((index) => {
+        return (
+            <BoxListaPlay>
+                <ListaPlay>
+                    {index.name}
+                    <BtnDelete onClick={() => { this.musicTracks(index.id) }}>Acessar</BtnDelete>
+                    <BtnDelete onClick={() => { if (window.confirm('Tem certeza que deseja remover esta playlist?')) { this.deletePlaylist(index.id) } }}>X</BtnDelete>
+                </ListaPlay>
+                
+            </BoxListaPlay>
+        )
+    })
       
+      const mostrarDadosMusica = this.state.tracks.map((i) => {
+        return (
+          // mostra as musicas
+          <div>
+            <h1>Música</h1>
+            <p><strong>Artista/Banda: </strong>{i.artist}</p>
+            <p><strong>Nome da musica: </strong>{i.name}</p>
+            <audio controls>
+              <source src={i.url} />
+            </audio>
+            <BtnDelete onClick={() => { if (window.confirm('Tem certeza que deseja remover esta música?')) { this.deleteTrackFromPlaylist(i.id) } }}>X</BtnDelete>
+          </div>
+        )
+      })
       
-
-
 
     return (
       <BoxCreatePlay>
@@ -288,7 +325,7 @@ export class PagPlayL extends React.Component {
         </div>
         <BtnCreate onClick={this.createPlaylist}>Criar</BtnCreate>
 
-        <div>
+        <BoxAddMusic>
           <h2>Adicione músicas a sua Playlist</h2>
           <form>
 
@@ -314,35 +351,22 @@ export class PagPlayL extends React.Component {
                                 <option value={index.id}>{index.name}</option> 
                          );
                         })}
-              </select> 
+              </select>
+                 
             </div>
-            <BtnCreate onClick={this.createTrackMusicToPlaylist}>Adicionar</BtnCreate>
+            
 
           </form>
-        </div>
+        </BoxAddMusic>
 
-        <BoxLista>
+            <BoxLista>
                 <h2>Lista de Playlist</h2>
-                {this.state.playlists.map((index) => {
-                    return (
-                        <BoxListaPlay>
-                            <ListaPlay>
-                                {index.name}
-                                <BtnDelete onClick={() => { this.musicTracks(index.id) }}>Acessar</BtnDelete>
-                                <BtnDelete onClick={() => { if (window.confirm('Tem certeza que deseja remover esta playlist?')) { this.deletePlaylist(index.id) } }}>X</BtnDelete>
-                            </ListaPlay>
-
-
-                            
-                        </BoxListaPlay>
-                    )
-                })}
+                {playlistsRender}
             </BoxLista>
-        
+                {mostrarDadosMusica}   
+                
       </BoxCreatePlay>
 
-      
-      
     )
   }
 }
