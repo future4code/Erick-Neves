@@ -114,14 +114,14 @@ export class PagPlayL extends React.Component {
     // selectedPlaylistId: "",
 
     playlists: [],
-    track: [],
-    page: true,
+    tracks: [],
+    // page: true,
     
   }
 
   componentDidMount = () => {
-    this.getAllPlaylists()
-    this.getPlaylistMusicTrack()
+    this.getAllPlaylists();
+    // this.getPlaylistMusicTrack()
     // this.setState({ openPlaylistTracks: false });
     
 }
@@ -156,11 +156,12 @@ export class PagPlayL extends React.Component {
     axios.post(baseUrl, body, axiosConfig)
     .then((response) => {
       this.getAllPlaylists();
-      alert("Play List criada com sucesso!")
+      alert("Play List criada com sucesso!");
       this.setState({inputNamePlaylist: ''})
     })
     .catch((error) => {
       alert("Erro: Nome já existente, tente novamente.")
+      console.log(error)
     })
   }
 
@@ -200,13 +201,13 @@ export class PagPlayL extends React.Component {
     axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${id}/tracks`, body,
     {
       headers: {
-        Authorization: "erick-neves-epps"
+        Authorization: "erick-neves-epps",
       }
     }
   )
     .then((response) => {
       alert("Música criada com sucesso!")
-      this.getPlaylistMusicTrack()
+      // this.getPlaylistMusicTrack()
     })
     .catch((error) => {
       alert("Erro: Nome já existente, tente novamente.")
@@ -214,16 +215,38 @@ export class PagPlayL extends React.Component {
   }
 
   getPlaylistMusicTrack = (id) => {
-        axios.get(`${baseUrl}/${id}/tracks`, axiosConfig)
+        axios.get(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${id}/tracks`,
+        {
+          headers: {
+            Authorization: "erick-neves-epps",
+          }
+        }
+      )
             .then((response) => {
-                this.setState({ track: response.data.result.tracks })
+                this.setState({ tracks: response.data.result.tracks })
 
                 console.log(response.data.result.tracks)
             })
             .catch((error) => {
                 console.log(error)
+                alert("Erro ao pegar musica da playlist")
             })
     }
+  
+  musicTracks = (id) => {
+    axios.get(
+      `https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${id}/tracks`,
+      {
+        headers: {
+          Authorization: "erick-neves-epps"
+        }
+      }
+    ).then((response) => {
+      this.setState({ allTracks: response.data.result.tracks })
+    }).catch((error) => {
+      alert('nao posso mostrar as musicas :(')
+    })
+  }
   
   
 
@@ -242,8 +265,14 @@ export class PagPlayL extends React.Component {
   
   
 
-  Page = () => {
-    if(this.state.page) {
+  render() {
+
+    // const playlistsRender = this.state.playlists.map((playlist) => {
+      
+      
+
+
+
     return (
       <BoxCreatePlay>
         <div>
@@ -287,7 +316,7 @@ export class PagPlayL extends React.Component {
                         })}
               </select> 
             </div>
-            <BtnCreate onClick={this.createTrackMusicToPlaylist}>Adicionar a playlist</BtnCreate>
+            <BtnCreate onClick={this.createTrackMusicToPlaylist}>Adicionar</BtnCreate>
 
           </form>
         </div>
@@ -299,95 +328,22 @@ export class PagPlayL extends React.Component {
                         <BoxListaPlay>
                             <ListaPlay>
                                 {index.name}
-                                <BtnCreate onClick={this.getPlaylistMusicTrack(index.id)}>Acessar</BtnCreate>
+                                <BtnDelete onClick={() => { this.musicTracks(index.id) }}>Acessar</BtnDelete>
                                 <BtnDelete onClick={() => { if (window.confirm('Tem certeza que deseja remover esta playlist?')) { this.deletePlaylist(index.id) } }}>X</BtnDelete>
                             </ListaPlay>
+
+
                             
                         </BoxListaPlay>
                     )
                 })}
             </BoxLista>
-            {/* <button onClick={this.props.state}>voltar</button> */}
+        
       </BoxCreatePlay>
 
-    )} else {
-      return (
-        <BoxCreatePlay>
-          <div>
-            <h2>Crie sua Playlist</h2>
-            <form>
-  
-              <div>
-                <label >Nome da sua playlist: </label>
-                <InputForm placeholder='Digite um nome para a playlist' value={this.state.inputNamePlaylist} onChange={this.handleinputNamePlaylist} />
-              </div>
-  
-            </form>
-          </div>
-          <BtnCreate onClick={this.createPlaylist}>Criar</BtnCreate>
-  
-          <div>
-            <h2>Adicione músicas a sua Playlist</h2>
-            <form>
-  
-              <div>
-                <label >Nome da música: </label>
-                <InputForm placeholder='Digite o nome da música' value={this.state.inputNameMusic} onChange={this.handleinputNameMusic} />
-              </div>
-  
-              <div>
-                <label >Nome do artista ou banda: </label>
-                <InputForm placeholder='Digite o nome do artista ou banda' value={this.state.inputNameArtistBand} onChange={this.handleinputNameArtistBand} />
-              </div>
-  
-              <div>
-                <label >Link para a música: </label>
-                <InputForm placeholder='Coloque o link para a música' value={this.state.inputUrl} onChange={this.handleinputUrl} />
-              </div>
-  
-              <div>
-                <label >Em qual playlist deseja adicionar: </label>
-                <select onChange={this.createTrackMusicToPlaylist}> <option></option> {this.state.playlists.map((index) => {
-                           return ( 
-                                  <option value={index.id}>{index.name}</option> 
-                           );
-                          })}
-                </select> 
-              </div>
-              
-  
-            </form>
-          </div>
-  
-          <BoxListaMusic>
-                  <h2>Lista de Músicas da playlist</h2>
-                  {this.state.track.map((index) => {
-                      return (
-                          <BoxListaPlay>
-                              <ListaPlay>
-                                  <p>{index.name}</p>
-                                  <p>{index.artist}</p>
-                                  <audio src ={index.url} controls='controls'></audio>
-                                  
-                              </ListaPlay>
-                              
-                          </BoxListaPlay>
-                      )
-                  })}
-              </BoxListaMusic>
-              <button onClick={this.voltarPlaylist}>voltar</button>
-        </BoxCreatePlay>
-      )
-    }
-  }
-
-    render() {
-      return (
-        <div>
-          {this.Page()}
-        </div>
-      ); 
       
-   }
+      
+    )
   }
+}
   
