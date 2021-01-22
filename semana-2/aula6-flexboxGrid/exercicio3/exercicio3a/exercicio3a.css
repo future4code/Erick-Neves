@@ -1,0 +1,114 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    font-size: 10px;
+    color: white;
+    
+}
+
+
+#main-container {           
+    
+}
+
+#top-container {             
+    display: flex; 
+}
+
+        .green-background {           
+            background-color: green;
+            width: 20vw;
+            height: 10vh;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+
+        .yellow-background {
+            background-color: yellow;
+            width: 80vw;
+            height: 10vh;
+            justify-content: center;
+            align-items: center;
+            display: flex;  
+        }
+
+        .pink-background {
+            display: flex;  
+            background-color: fuchsia;
+            flex-grow: 1;
+            height: 50vh;
+            justify-content: center;
+            align-items: center;  
+        }
+
+#middle-container {          
+    display: flex;
+}              
+
+    #content2 {                 
+    display: flex;     /* #sem também funciona visualmente */
+    }
+
+        .blue-background {
+            display: flex;
+            background-color: blue;
+            height: 30vh;
+            width: 50vw;
+            justify-content: center;
+            align-items: center;
+        }
+
+#blank {
+    display: flex;
+    width: 30vw;
+    /* height: 30vh; */     /* nem precisa já foi definida a altura pelo elemento blue, encaixando na mesma altura blank*/
+} 
+
+#vertical-middle-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0.5;
+}
+
+    #image{
+        display: flex;
+        height: 15vh;
+        width: 25vw;
+    }
+
+        .red-background {
+            background-color: red;
+            display: flex;
+            width: 55vh;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+#extra {
+    display: flex;
+    width: 25vw;
+    height: 15vh;   
+}
+
+    .lightgreen-background {
+        background-color: lightgreen;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 55vh;  
+    }
+
+
+
+.purple-background {
+    background-color: purple;
+    display: flex;
+    width: 100vw;
+    height: 10vh;
+    justify-content: center;
+    align-items: center;
+}
