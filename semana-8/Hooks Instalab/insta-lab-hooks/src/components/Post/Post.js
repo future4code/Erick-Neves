@@ -22,14 +22,14 @@ const Post = (props) => {
     if (curtido) {
       // se for true, entra nesse caso, e o estado é modificado de acordo com esses comandos:
       setCurtido(!curtido)
-      setCurtido(numeroCurtidas -1)
+      setNumeroCurtidas(numeroCurtidas -1)
   
       
     } else {
 
       // se for false, entra nesse caso, e o estado é modificado de acordo com esses comandos:
       setCurtido(!curtido)
-      setNumeroCurtidas(+1)
+      setNumeroCurtidas(numeroCurtidas +1)
     }
   }
 
