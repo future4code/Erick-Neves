@@ -7,7 +7,7 @@ export default function ProfilePage() {
   return (
     <div>
         <ProfileCardPhoto />
-        <hr />
+        {/* <hr /> */}
         <ProfileChooseButtons />
     </div>
   );
