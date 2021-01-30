@@ -3,7 +3,9 @@ import React from 'react'
 export default function ProfileChooseButtons() {
     return (
         <div>
-            ProfileChooseButtons
+            <button>Não</button>
+            <button>Sim</button>
+
         </div>
     )
 }

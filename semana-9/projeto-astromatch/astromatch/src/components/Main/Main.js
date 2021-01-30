@@ -8,8 +8,8 @@ export default function Main() {
     <div>
       <LogoAppBar />
       <hr />
-      <ProfileMain />
-      {/* <MatchListPage />  */}
+      {/* <ProfileMain /> */}
+      <MatchListPage /> 
     </div>
   )
 }

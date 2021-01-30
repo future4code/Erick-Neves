@@ -3,6 +3,8 @@ import React from "react";
 
 export default function ResetButton() {
   return (
-    <div>ResetButton</div>
+    <div>
+        <button>Resetar matchers</button>
+    </div>
   );
 }

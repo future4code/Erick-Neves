@@ -1,9 +1,13 @@
 import React from 'react'
+import MatchListItem from './MatchListItem'
 
 export default function MatchListPage() {
     return (
         <div>
-            MatchListPage
+            <MatchListItem />
+            <MatchListItem />
+            <MatchListItem />
+            <MatchListItem />
         </div>
     )
 }
