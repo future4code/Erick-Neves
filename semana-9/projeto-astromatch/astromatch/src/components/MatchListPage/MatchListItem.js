@@ -16,13 +16,18 @@ const Avatar = styled.img`
     border-radius: 50%;
     margin-right: 8px;
     margin-left: 5px;
+    height: 30px;
+    width: 30px;
 `
+// recebe a props profile do pai MatchListPage 
+export default function MatchListItem(props) {
+    const profile = props.profile
 
-export default function MatchListItem() {
     return (
+        //declaramos como constante para facilitar não escrever varias vezes props.profile
         <ItemContainer>
-            <Avatar src={'https://picsum.photos/30/30'} />
-            <p>Nome da pessoa</p>
+            <Avatar src={profile.photo} />
+            <p>{profile.name}</p>
         </ItemContainer>
     )
 }

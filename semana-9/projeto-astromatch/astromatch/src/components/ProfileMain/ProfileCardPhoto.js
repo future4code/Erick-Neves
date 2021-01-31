@@ -9,12 +9,14 @@ const ProfilePhoto = styled.img`
     width: 100%;
 `
 
-export default function ProfileCardPhoto() {
+// recebe como a props profile de ProfileMain
+export default function ProfileCardPhoto(props) {
+    const profile = props.profile
     return (
         <ProfileCardContainer>
-            <ProfilePhoto src={'https://picsum.photos/300/300'} />
-            <p>Nome da pessoa, Idade</p>
-            <p>Descrição da pessoa</p>
+            <ProfilePhoto src={profile.photo} />
+            <p>{profile.name}, {profile.age}</p>
+            <p>{profile.bio}</p>
         </ProfileCardContainer>
     )
 }
