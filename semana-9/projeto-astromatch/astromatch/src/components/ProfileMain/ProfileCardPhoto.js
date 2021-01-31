@@ -7,6 +7,8 @@ const ProfileCardContainer = styled.div`
 `
 const ProfilePhoto = styled.img`
     width: 100%;
+    display: block;
+    height: 350px;
 `
 
 // recebe como a props profile de ProfileMain

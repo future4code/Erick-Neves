@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import MatchListItem from './MatchListItem'
 import styled from "styled-components"
+import axios from 'axios'
+import { baseUrl, axiosConfig } from "../parameters"
 
 const ListContainer = styled.div`
   padding: 5px;
@@ -8,15 +10,21 @@ const ListContainer = styled.div`
 `
 
 export default function MatchListPage() {
-    const matches = [
-        {
-        "id": "71gMbZs2txS9LDvGK5Ew",
-        "age": 26,
-        "name": "Anitta",
-        "photo": "https://images.outgo.com.br/clients/1/events/2923/Anitta-Perfil-4-1.png",
-        "bio": "Amo cachorros e sair para dançar. Procuro alguém animado e sem neuras."
-        }
-    ]
+    //o que era antes uma variavel const fixa, vai passar a ser uma varivavel de estado a partir do useState
+  const [matches, setMatches] = useState([])
+   
+
+    useEffect(() => {
+        axios.get(`${baseUrl}/${axiosConfig}/matches`)
+        .then(response => {
+            console.log('MATCHlist',response.data.matches)
+            setMatches(response.data.matches)
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      
+    }, [])
         
 
     return (
