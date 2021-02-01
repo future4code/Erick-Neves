@@ -11,14 +11,14 @@ const AppBarContainer = styled.div`
 
 
 
-export default function LogoAppBar() {
+export default function LogoAppBar(props) {
   return (
     <AppBarContainer>
-        <button>Escolher Match</button>
+        <button onClick={props.goToProfileMainPagePropOnMain} >Escolher Match</button>
         <p>
             astroMatch logo
         </p>
-        <button>Lista de Match</button>
+        <button onClick={props.goToMatchListPagePropOnMain}>Lista de Match</button>
     </AppBarContainer>
   );
 }

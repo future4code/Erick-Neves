@@ -28,9 +28,9 @@ export default function MatchListPage() {
         
 
     return (
-        //passamos a props profile de parametro com nome também chamada profile para o filho MatchListItem
         <ListContainer>
             {matches.map((profile) => {
+                //passamos a props profile de parametro com nome também chamada profile para o filho MatchListItem
                 return <MatchListItem profile={profile} />
             }
             )}

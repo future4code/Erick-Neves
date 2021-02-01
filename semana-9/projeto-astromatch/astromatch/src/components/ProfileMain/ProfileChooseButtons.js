@@ -6,12 +6,12 @@ const ButtonsContainer = styled.div`
     justify-content: space-around;
 `
 
-export default function ProfileChooseButtons() {
+export default function ProfileChooseButtons(props) {
+
     return (
         <ButtonsContainer>
-            <button>Não</button>
-            <button>Sim</button>
-
+            <button onClick={props.onClickNot}>Não</button>
+            <button onClick={props.onClickYes}>Sim</button>
         </ButtonsContainer>
     )
 }

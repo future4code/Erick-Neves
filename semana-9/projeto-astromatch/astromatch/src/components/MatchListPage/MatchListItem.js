@@ -22,9 +22,9 @@ const Avatar = styled.img`
 // recebe a props profile do pai MatchListPage 
 export default function MatchListItem(props) {
     const profile = props.profile
-
+    //declaramos como constante para facilitar não escrever varias vezes props.profile
     return (
-        //declaramos como constante para facilitar não escrever varias vezes props.profile
+        
         <ItemContainer>
             <Avatar src={profile.photo} />
             <p>{profile.name}</p>
