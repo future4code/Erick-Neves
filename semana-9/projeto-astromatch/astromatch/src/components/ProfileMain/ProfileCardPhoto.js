@@ -2,13 +2,18 @@ import React from 'react'
 import styled from "styled-components"
 
 const ProfileCardContainer = styled.div`
-    margin: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+    margin: 2.5vh;
     border: 1px solid black;
 `
 const ProfilePhoto = styled.img`
     width: 100%;
     display: block;
-    height: 350px;
+    height: 300px;
 `
 
 // recebe como a props profile de ProfileMain

@@ -1,12 +1,21 @@
 import React from "react";
 import styled from "styled-components";
+import LogoIMG from "../../img/logo-astromatch.png"
 
 const AppBarContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 10px;
+    margin-top: 14vh;
+    padding: 0px 5vh;
     border-bottom: 1px solid darkgrey;
+`
+
+const ImgLogo = styled.img`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 7vh; 
 `
 
 
@@ -14,11 +23,11 @@ const AppBarContainer = styled.div`
 export default function LogoAppBar(props) {
   return (
     <AppBarContainer>
-        <button onClick={props.goToProfileMainPagePropOnMain} >Escolher Match</button>
-        <p>
-            astroMatch logo
-        </p>
-        <button onClick={props.goToMatchListPagePropOnMain}>Lista de Match</button>
+        <button onClick={props.goToProfileMainPagePropOnMain}>Match</button>
+        
+        <ImgLogo src={LogoIMG}/>
+        
+        <button onClick={props.goToMatchListPagePropOnMain}>Lista</button>
     </AppBarContainer>
   );
 }

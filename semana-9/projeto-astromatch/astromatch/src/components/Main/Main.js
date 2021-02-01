@@ -5,11 +5,18 @@ import ProfileMain from '../ProfileMain/ProfileMain'
 import styled from "styled-components"
 
 const MainContainer = styled.div`
-  border: 1px solid black;
+  margin: auto;
+  margin-top: 2vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  height: 90vh;
+  width: 50vh;
+  box-shadow: 2px 2px 10px -2px;
   border-radius: 5px;
-  width: 400px;
-  height: 600px;
-  margin: 15px;
+  background-color: white;
 
 `
 

@@ -4,6 +4,16 @@ import ProfileChooseButtons from "./ProfileChooseButtons";
 import axios from "axios";
 import { baseUrl, axiosConfig } from "../parameters";
 
+import styled from 'styled-components';
+import loadingIcon from "../../img/heart.gif";
+
+const ImgLoading = styled.img`
+  margin: auto;
+  height: 70vh;
+  width: 70vh;
+`;
+
+
 
 export default function ProfilePage() {
 //o que era antes uma variavel const fixa, vai passar a ser uma varivavel de estado a partir do useState
@@ -70,12 +80,12 @@ const choiceProfile = (choice) => {
     <div>
     { profileToChoose ?
         (<>
-            {/* passando como props profile, com a variavel const para onde vai redenrizar de alguma forma */}
+                 {/* passando como props profile, com a variavel const para onde vai redenrizar de alguma forma */}
             <ProfileCardPhoto profile={profileToChoose}/>  
-            {/* <hr /> */}
-            {/* passando como props as funções e com mesmo nome para facilitar*/}
+                 {/* <hr /> */}
+                 {/* passando como props as funções e com mesmo nome para facilitar*/}
             <ProfileChooseButtons onClickNot={onClickNot} onClickYes={onClickYes} />
-        </>) : <p>Carregando...</p>
+        </>) : <ImgLoading src={loadingIcon} alt="loading Icon" />
     }
     </div>
   );

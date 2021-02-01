@@ -4,7 +4,9 @@ import styled from "styled-components"
 const ItemContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 5px;  
+  justify-content: center;
+  margin: 0.5vh;  
+  padding: 0.5vh;
   border: 1px solid black;
   border-radius: 5px;
 
@@ -14,10 +16,10 @@ const ItemContainer = styled.div`
 `
 const Avatar = styled.img`
     border-radius: 50%;
-    margin-right: 8px;
-    margin-left: 5px;
-    height: 30px;
-    width: 30px;
+    display: flex;
+    margin: 1vh 1vh 1vh 1vh;
+    height: 8vh;
+    width: 8vh;
 `
 // recebe a props profile do pai MatchListPage 
 export default function MatchListItem(props) {

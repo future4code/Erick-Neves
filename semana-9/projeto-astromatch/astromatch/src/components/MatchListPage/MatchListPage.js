@@ -5,9 +5,10 @@ import axios from 'axios'
 import { baseUrl, axiosConfig } from "../parameters"
 
 const ListContainer = styled.div`
+/* margin-top: 10vh; */
   padding: 5px;
-
 `
+
 
 export default function MatchListPage() {
     //o que era antes uma variavel const fixa, vai passar a ser uma varivavel de estado a partir do useState
