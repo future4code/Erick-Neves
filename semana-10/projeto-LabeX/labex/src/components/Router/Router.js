@@ -7,7 +7,6 @@ import AdmPage from "../LoginAdmPage/AdmPage";
 import AproveAndReproveTrips from "../LoginAdmPage/AproveAndReproveTrips";
 import DeleteTrips from "../LoginAdmPage/DeleteTrips";
 import CreateTripPage from "../CreateTripPage/CreateTripPage";
-
 import ErrorPage from "../ErrorPage/ErrorPage";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Header from "../Header/Header";
@@ -22,10 +21,10 @@ export default function Router() {
         <Route exact path="/">
           <HomePage />
         </Route>
-        <Route exact path={"/candidato"}>
+        <Route exact path={"/application-form"}>
           <ApplicationFormPage />
         </Route>
-        <Route exact path={"/list"}>
+        <Route exact path={"/trips/list"}>
           <ListTripsPage />
         </Route>
         <Route exact path={"/loginAdm"}>
@@ -34,13 +33,13 @@ export default function Router() {
         <Route exact path={"/admPage"}>
           <AdmPage />
         </Route>
-        <Route exact path={"/aproveAndReprove"}>
+        <Route exact path={"/trips/aproveAndReprove"}>
           <AproveAndReproveTrips />
         </Route>
-        <Route exact path={"/deleteTrips"}>
+        <Route exact path={"/trips/delete"}>
           <DeleteTrips />
         </Route>
-        <Route exact path={"/createTrip"}>
+        <Route exact path={"/trips/create"}>
           <CreateTripPage />
         </Route>
 

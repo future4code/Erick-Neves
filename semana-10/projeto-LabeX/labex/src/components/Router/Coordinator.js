@@ -3,11 +3,11 @@ export const goToHomePage = (history) => {
   };
 
 export const goToApplicationFormPage = (history) => {
-    history.push("/candidato");
+    history.push("/application-form");
   };
 
 export const goToListTripsPage = (history) => {
-    history.push("/list");
+    history.push("/trips/list");
   };
 
 export const goToLoginAdmPage = (history) => {
@@ -19,13 +19,13 @@ export const goToAdmPage = (history) => {
   };
 
 export const goToAproveAndReproveTrips = (history) => {
-    history.push("/aproveAndReprove");
+    history.push("/trips/aproveAndReprove");
   };
 
 export const goToDeleteTrips = (history) => {
-    history.push("/deleteTrips");
+    history.push("/trips/delete");
   };
 
 export const goToCreateTripPage = (history) => {
-    history.push("/createTrip");
+    history.push("/trips/create");
   };
