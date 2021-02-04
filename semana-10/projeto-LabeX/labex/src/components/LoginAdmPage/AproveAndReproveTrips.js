@@ -1,7 +1,9 @@
 import React from "react";
+import { useProtectedPage } from "../Hooks/useProtectedPage";
 
 const AproveAndReproveTrips = () => {
-  return <div>AproveAndReproveTrips</div>;
+    useProtectedPage();
+    return <div>AproveAndReproveTrips</div>;
 };
 
 export default AproveAndReproveTrips;

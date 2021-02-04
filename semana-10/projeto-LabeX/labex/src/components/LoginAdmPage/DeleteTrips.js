@@ -1,7 +1,9 @@
 import React from "react";
+import { useProtectedPage } from "../Hooks/useProtectedPage";
 
 const DeleteTrips = () => {
-  return <div>DeleteTrips</div>;
+    useProtectedPage();
+    return <div>DeleteTrips</div>;
 };
 
 export default DeleteTrips;

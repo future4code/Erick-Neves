@@ -1,7 +1,9 @@
 import React from "react";
+import { useProtectedPage } from "../Hooks/useProtectedPage";
 
 const CreateTripPage = () => {
-  return <div>CreateTripPage</div>;
+    useProtectedPage();
+    return <div>CreateTripPage</div>;
 };
 
 export default CreateTripPage;
