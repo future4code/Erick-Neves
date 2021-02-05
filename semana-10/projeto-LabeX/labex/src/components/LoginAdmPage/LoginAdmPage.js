@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { goToAdmPage } from "../Router/Coordinator";
 import axios from "axios";
@@ -60,9 +60,6 @@ export default function LoginAdmPage() {
   const history = useHistory();
   const [form, onChange, clear] = useForm({ email: "", password: "" });
 
-//   const [email, setEmail] = useState("");
-//   const [password, setPassword] = useState("");
-
   useEffect(() => {
     const token=localStorage.getItem("token")
 
@@ -72,15 +69,11 @@ export default function LoginAdmPage() {
   }, [history])
 
   const handleClick = (event) => {
-    // const body = {
-    //   email: email,
-    //   password: password,
-    // };
     event.preventDefault();
     //Antes a gente tinha que fazer o body na mão juntando os estados:
     // Agora não precisa mais disso pois todos os estados estão atualizados bonitinhos no estado form! 
     axios
-      .post(`${baseUrl}/loginAdm`) //, body)
+      .post(`${baseUrl}/loginAdm`, form)
       .then((res) => {
         window.localStorage.setItem("token", res.data.token)
         goToAdmPage(history);
@@ -92,14 +85,6 @@ export default function LoginAdmPage() {
     clear();
   };
 
-//   const handleEmail = (e) => {
-//     setEmail(e.target.value);
-//   };
-
-//   const handlePassword = (e) => {
-//     setPassword(e.target.value);
-//   };
-
   return (
 
       <LoginContainer>
@@ -107,11 +92,11 @@ export default function LoginAdmPage() {
           <h3>Login Admin - LabeX</h3>
           <div>
             <label>E-mail:</label>
-            <input name="email" value={form.email} onChange={onChange} type="email" placeholder="E-mail" />
+            <input name="email" value={form.email} onChange={onChange} type="email" placeholder="E-mail" required />
           </div>
           <div>
             <label>Senha:</label>
-            <input name="password" value={form.password} type="password" onChange={onChange} placeholder="Senha" />
+            <input name="password" value={form.password} type="password" onChange={onChange} placeholder="Senha" required />
           </div>
           <Button>LOGIN</Button>
         </BoxForm>
