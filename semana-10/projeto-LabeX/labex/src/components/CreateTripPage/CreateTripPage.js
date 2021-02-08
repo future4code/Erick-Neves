@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 
 import axios from "axios";
-// import { useProtectedPage } from "../Hooks/useProtectedPage";
+import { useProtectedPage } from "../Hooks/useProtectedPage";
 import useForm from "../Hooks/useForm";
 import { baseUrl } from "../parameters";
+import PageTitle from "../PageTitle";
+import { FormContainer } from "../ApplicationFormPage/styled";
+import { Button, FormControl, InputLabel, MenuItem, Select, TextField } from "@material-ui/core";
 
 
 const CreateTripPage = () => {
-//   useProtectedPage()
+  useProtectedPage()
 
-  const [form, onChange, clearFields] = useForm({
+  const [form, onChangeInput, clearFields] = useForm({
     name: '',
     planet: '',
     date: '',
@@ -39,72 +42,64 @@ const CreateTripPage = () => {
   
   return (
     <div>
-    <h1>Create page</h1>
-    <div>
-      <h2>Crie uma viagem</h2>
-      <form onSubmit={createTrip}>
-        <div>
-          <input 
-            name='name'
-            value={form.name}
-            onChange={onChange}
-            id='nome'
-            placeholder='Nome da viagem'
-            type='text'
-          />
-        </div>
-
-        <div>
-          <input 
-            name='date'
-            value={form.date}
-            onChange={onChange}
-            id='date'
-            placeholder='date'
-            type='date'
-          />
-        </div>
-
-        <div>
-          <input 
-            name='description'
-            value={form.description}
-            onChange={onChange}
-            id='description'
-            placeholder='descrição da vaigem'
-            type='text'
-          />
-        </div>
+        <PageTitle title={'Criar viagem'} />
+        <FormContainer onSubmit={createTrip}>
+            
+            <TextField variant="outlined" label={'Name'}
+                name='name'
+                value={form.name}
+                onChange={onChangeInput}
+                id='nome'
+                type='text'
+                required
+            />
+            
+            <TextField variant="outlined" 
+                name='date'
+                value={form.date}
+                onChange={onChangeInput}
+                id='date'
+                type='date'
+                required
+            />
+            
+            <TextField variant="outlined" label="Descrição da viagem"
+                name='description'
+                value={form.description}
+                onChange={onChangeInput}
+                id='description'
+                type='text'
+                required
+            />
         
-        <div>
-          <input 
-            name='durationInDays'
-            value={form.durationInDays}
-            onChange={onChange}
-            id='durationInDays'
-            placeholder='duração'
-            type='number'
-          />
-        </div>
-
-        <div>
-          <select
-            name='planet'
-            value={form.planet}
-            onChange={onChange}
-          >
-            {planetList.map((planet) =>{
-              return(
-                <option value={planet}>{planet}</option>
-              )
-            })}
-          </select>
-        </div>
-
-        <button type='submit'>Criar</button>
-      </form>
+            <TextField variant="outlined" label="Duração em dias"
+                name='durationInDays'
+                value={form.durationInDays}
+                onChange={onChangeInput}
+                id='durationInDays'
+                type='number'
+                required
+            />
+            <FormControl>
+            <InputLabel variant="outlined" labelId="demo-simple-select-outlined-label" id="demo-simple-select-outlined">Planeta</InputLabel>
+            <Select variant="outlined" labelId="demo-simple-select-outlined-label" id="demo-simple-select-outlined"
+                label="Planeta"
+                name='planet'
+                value={form.planet}
+                onChange={onChangeInput}
+                type='option'
+                required
+            >
+                {planetList.map((planet) =>{
+                return(
+                    <MenuItem value={planet}>{planet}</MenuItem>
+                )
+                })}
+            </Select>
+            </FormControl>
+            <Button variant={'contained'} color="primary" type='submit'>Criar</Button>
+        </FormContainer>
     </div>
-  </div>
   )
 };
 

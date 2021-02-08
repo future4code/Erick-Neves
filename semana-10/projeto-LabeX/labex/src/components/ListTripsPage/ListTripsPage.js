@@ -36,7 +36,6 @@ const ListTripsPage = () => {
       },
     })
     .then((res) =>{
-        alert('Sucesso em detalhes')
         console.log(res)
         setTripDetails(res.data.trip)
         setGoToDetails(true)
@@ -52,12 +51,12 @@ const ListTripsPage = () => {
             <div>
               {trip.name}
             </div>
-            <div>
+            {/* <div>
               {trip.planet}
-            </div>
-            <div>
+            </div> */}
+            {/* <div>
               {trip.description}
-            </div>
+            </div> */}
             <div>
               <button onClick={() => getTripDetails(trip.id)}>Ver detalhes</button>
             </div>
@@ -72,7 +71,21 @@ const ListTripsPage = () => {
           <div>
             {goToDetails ? 
             <>
-              {tripDetails.name}
+                <div>
+                    {tripDetails.name}
+                </div>
+                <div>
+                    {tripDetails.planet}
+                </div>
+                <div>
+                    {tripDetails.description}
+                </div>
+                <div>
+                    {tripDetails.durationInDays}
+                </div>
+                <div>
+                    {tripDetails.date}
+                </div>
               <button onClick={goTolistTrip}>Voltar</button>
             </> : 
             <>
