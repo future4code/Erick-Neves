@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { goToAdmPage } from "../Router/Coordinator";
 import axios from "axios";
@@ -32,28 +31,6 @@ const BoxForm = styled.form`
   gap: 17px;
 `
 
-// const Button = styled.button`
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   width: 80%;
-//   height: 20px ;
-//   padding: 15px;
-//   margin-top: 30px;
-//   border: 1px solid silver;
-//   background: transparent;
-//   color: white;
-//   letter-spacing: 2px;
-//   text-shadow: 1px 1px #000;
-//   cursor: pointer;
-//   transition: 0.3s linear;
-//   &:hover {
-//     background: silver;
-//     color: black;
-//     text-shadow: 1px 1px grey;
-//   }
-// `
 
 
 export default function LoginAdmPage() {
