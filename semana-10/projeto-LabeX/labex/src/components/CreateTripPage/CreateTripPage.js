@@ -1,5 +1,3 @@
-import React, { useState } from "react";
-
 import axios from "axios";
 import { useProtectedPage } from "../Hooks/useProtectedPage";
 import useForm from "../Hooks/useForm";
@@ -27,9 +25,9 @@ const CreateTripPage = () => {
   const createTrip = (event) =>{
     event.preventDefault()
     clearFields()
-    axios.post(`${baseUrl}`, form, {
+    axios.post(`${baseUrl}/trips`, form, {
       headers:{
-        auth: localStorage.getItem("token"),
+        auth: window.localStorage.getItem("token"),
       }
     })
     .then((res) =>{

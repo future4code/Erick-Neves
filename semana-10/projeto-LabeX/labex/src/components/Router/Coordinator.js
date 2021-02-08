@@ -10,6 +10,10 @@ export const goToListTripsPage = (history) => {
     history.push("/trips/list");
   };
 
+export const goToListTripsAdmPage = (history) => {
+    history.push("/admPage/trips/list");
+  };
+
 export const goToLoginAdmPage = (history) => {
     history.push("/loginAdm");
   };

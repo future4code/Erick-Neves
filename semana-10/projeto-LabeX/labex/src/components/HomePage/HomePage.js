@@ -1,5 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import PageTitle from "../PageTitle";
 import { goToApplicationFormPage } from "../Router/Coordinator";
 
 const HomePage = () => {
@@ -7,9 +8,9 @@ const HomePage = () => {
 
   return (
     <div>
-      <h1>Home Page</h1>
+      <PageTitle title={'Home Page'} />
       <button onClick={() => goToApplicationFormPage(history)}>
-        Candidate-se
+        Inscreva-se
       </button>
     </div>
   );

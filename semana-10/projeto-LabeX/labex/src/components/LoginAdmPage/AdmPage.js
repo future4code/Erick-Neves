@@ -1,6 +1,6 @@
 import React from "react";
 import { useProtectedPage } from "../Hooks/useProtectedPage";
-import { goToAproveAndReproveTrips, goToCreateTripPage, goToDeleteTrips } from "../Router/Coordinator";
+import { goToAproveAndReproveTrips, goToCreateTripPage, goToListTripsAdmPage } from "../Router/Coordinator";
 import styled from 'styled-components';
 import { useHistory } from "react-router-dom";
 
@@ -22,8 +22,8 @@ const AdmPage = () => {
             <button onClick={() => goToCreateTripPage(history)}>
               Criar viagens
             </button>
-            <button onClick={() => goToDeleteTrips(history)}>
-              Deletar viagens
+            <button onClick={() => goToListTripsAdmPage(history)}>
+              Gerenciar Viagens
             </button>
             <button onClick={() => goToAproveAndReproveTrips(history)}>
               Avaliar candidatos

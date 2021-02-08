@@ -10,6 +10,7 @@ import CreateTripPage from "../CreateTripPage/CreateTripPage";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Header from "../Header/Header";
+import ListTripsAdmPage from "../ListTripsAdmPage/ListTripsAdmPage";
 
 
 export default function Router() {
@@ -25,6 +26,9 @@ export default function Router() {
         </Route>
         <Route exact path={"/trips/list"}>
           <ListTripsPage />
+        </Route>
+        <Route exact path={"/admPage/trips/list"}>
+          <ListTripsAdmPage />
         </Route>
         <Route exact path={"/loginAdm"}>
           <LoginAdmPage />

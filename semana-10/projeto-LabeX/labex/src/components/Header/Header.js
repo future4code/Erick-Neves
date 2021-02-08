@@ -15,7 +15,7 @@ const Header = () => {
   return <HeaderContainer>
     <h2>Labex</h2>
     <button onClick={() => goToHomePage(history)}>Home</button>
-    <button onClick={() => goToApplicationFormPage(history)}>Candidate-se</button>
+    <button onClick={() => goToApplicationFormPage(history)}>Inscreva-se</button>
     <button onClick={() => goToListTripsPage(history)}>Lista de viagens</button>
     <button onClick={() => goToLoginAdmPage(history)}>Login ADM</button>
     </HeaderContainer>;

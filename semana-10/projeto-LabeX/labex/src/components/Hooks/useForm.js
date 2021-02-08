@@ -13,7 +13,6 @@ const useForm = (initialState) => {                 //o estado inicial(initialSt
     //          (...pega todas as propriedades anteriores) e seta a proxima propriedade de [nome]: e valor
     // setForm({...form, [fieldName]: newValue})
   };
-
   const clearFields = () => {
     setForm(initialState);
   };
