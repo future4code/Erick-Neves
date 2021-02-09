@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import axios from "axios"
-import { baseUrl } from "../parameters"
+import { baseUrl } from "../Parameters/parameters"
 
 export const useGetTripsList = () => {
   const [trips, setTrips] = useState([])

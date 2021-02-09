@@ -6,11 +6,11 @@ import {
   ContainerInfoTrip,
   ContainerItem,
   BoxButton
-} from '../ListTripsPage/styled.js'
-import { goToApplicationFormPage } from "../Router/Coordinator.js";
+} from './styled.js'
+import { goToApplicationFormPage } from "../../Router/Coordinator.js";
 import { useHistory } from "react-router";
 import { Button } from "@material-ui/core";
-import PageTitle from "../PageTitle/index.js";
+import PageTitle from "../../components/PageTitle/index.js";
 
 const ListTripsPage = () => {
   const history = useHistory();

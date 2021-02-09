@@ -1,10 +1,10 @@
 import { Button, FormControl, InputLabel, MenuItem, Select, TextField } from "@material-ui/core";
 import axios from "axios";
 import React from "react";
-import useForm from "../Hooks/useForm";
-import { useGetTripsList } from "../Hooks/useGetTripsList";
-import PageTitle from "../PageTitle";
-import { baseUrl } from "../parameters";
+import useForm from "../../Hooks/useForm";
+import { useGetTripsList } from "../../Hooks/useGetTripsList";
+import PageTitle from "../../components/PageTitle";
+import { baseUrl } from "../../Parameters/parameters";
 import { FormContainer } from "./styled";
 
 

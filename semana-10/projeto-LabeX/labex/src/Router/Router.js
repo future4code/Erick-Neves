@@ -1,15 +1,15 @@
 import React from "react";
-import HomePage from "../HomePage/HomePage";
-import ApplicationFormPage from "../ApplicationFormPage/ApplicationFormPage";
-import ListTripsPage from "../ListTripsPage/ListTripsPage";
-import LoginAdmPage from "../LoginAdmPage/LoginAdmPage";
-import AdmPage from "../LoginAdmPage/AdmPage";
+import HomePage from "../pages/HomePage/HomePage";
+import ApplicationFormPage from "../pages/ApplicationFormPage/ApplicationFormPage";
+import ListTripsPage from "../pages/ListTripsPage/ListTripsPage";
+import LoginAdmPage from "../pages/LoginAdmPage/LoginAdmPage";
+import AdmPage from "../pages/LoginAdmPage/AdmPage";
 
-import CreateTripPage from "../CreateTripPage/CreateTripPage";
-import ErrorPage from "../ErrorPage/ErrorPage";
+import CreateTripPage from "../pages/CreateTripPage/CreateTripPage";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Header from "../Header/Header";
-import ListTripsAdmPage from "../ListTripsAdmPage/ListTripsAdmPage";
+import Header from "../components/Header/Header";
+import ListTripsAdmPage from "../pages/ListTripsAdmPage/ListTripsAdmPage";
 
 
 export default function Router() {

@@ -1,9 +1,9 @@
 import { useHistory } from "react-router-dom";
-import { goToAdmPage } from "../Router/Coordinator";
+import { goToAdmPage } from "../../Router/Coordinator";
 import axios from "axios";
-import { baseUrl } from "../parameters";
+import { baseUrl } from "../../Parameters/parameters";
 import styled from "styled-components";
-import useForm from "../Hooks/useForm";
+import useForm from "../../Hooks/useForm";
 import { TextField, Button } from '@material-ui/core'
 
 const LoginContainer = styled.div`

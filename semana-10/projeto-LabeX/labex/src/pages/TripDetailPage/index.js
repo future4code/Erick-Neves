@@ -5,8 +5,8 @@ import CandidatesList from './CandidatesList'
 import { ContentContainer } from './styles'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
-import { baseUrl } from '../parameters'
-import { useProtectedPage } from '../Hooks/useProtectedPage'
+import { baseUrl } from '../../Parameters/parameters'
+import { useProtectedPage } from '../../Hooks/useProtectedPage'
 
 const TripDetailPage = () => {
   const [trip, setTrip] = useState()

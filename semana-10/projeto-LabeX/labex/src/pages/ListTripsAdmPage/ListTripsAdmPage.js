@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios'
-import { useProtectedPage } from "../Hooks/useProtectedPage";
-import { baseUrl } from "../parameters";
+import { useProtectedPage } from "../../Hooks/useProtectedPage";
+import { baseUrl } from "../../Parameters/parameters";
 // import PageTitle from "../PageTitle";
 import TripDetailPage from "../TripDetailPage/index";
+import { Button } from "@material-ui/core";
+import { useHistory } from "react-router-dom";
+import { goToAdmPage } from "../../Router/Coordinator";
 
 
 const ListTripsAdmPage = () => {
@@ -21,6 +24,8 @@ const ListTripsAdmPage = () => {
   const goTolistTrip = () => {
     setGoToDetails(false)
   }
+
+  const history = useHistory()
 
   const getTrips = () => {
     axios.get(`${baseUrl}/trips`)
@@ -83,7 +88,9 @@ const ListTripsAdmPage = () => {
           getTripDetails={getTripDetails}
           tripId={tripId}
         />}</> :
-        <>{trispsRender}</>}
+        <>{trispsRender}
+        <Button variant={'contained'} type={'submit'} onClick={() => goToAdmPage(history)}>Voltar</Button>
+        </>}
     </div>
   )
 };
