@@ -1,25 +1,25 @@
 import styled from 'styled-components';
+import space from '../../imgs/astronauta-terra-1400x800.jpg'
 
 
 export const ContainerTrips = styled.div`
-
     display: flex;
     justify-content: center;
+    background-image: url(${space});
+    background-size: 100%;
+    /* height: 90vh; */
+    background-repeat: repeat;
 `
 
 export const ContainerMainTrips = styled.div`
     width: 90%;
-    margin-top: 100px;
-    margin-bottom: 50px;
-    top: 150px;
-    background: #000000a3;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    background: #000000a9;
     color: white;
     border-radius: 5px;
     padding: 15px;
     min-height: 100vh;
-    h1{
-        margin: 0;
-    }
 `
 
 export const ContainerInfoTrip = styled.div`
@@ -45,8 +45,7 @@ export const ContainerItem = styled.div`
 export const BoxButton = styled.div`
     display: flex;
     flex-direction: row;
-    margin: 40px;
-    border-radius: 10px;
+    margin: 20px;
     justify-content: center;
     justify-items: center;
     align-items: center;

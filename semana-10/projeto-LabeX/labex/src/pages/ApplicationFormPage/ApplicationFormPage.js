@@ -5,7 +5,7 @@ import useForm from "../../Hooks/useForm";
 import { useGetTripsList } from "../../Hooks/useGetTripsList";
 import PageTitle from "../../components/PageTitle";
 import { baseUrl } from "../../Parameters/parameters";
-import { FormContainer } from "./styled";
+import { ContainerPage, FormContainer } from "./styled";
 
 
 const ApplicationFormPage = () => {
@@ -36,16 +36,17 @@ const ApplicationFormPage = () => {
     }
 
     return (
-        <div>
-            
-            <PageTitle title={'Inscrever para viagem'} />
+        <ContainerPage>
+
         {/* basta que tenha o onsubmit no formcontainer desde que tenha type={'submit'} no button do form */}
             <FormContainer onSubmit={onSubmitApplication}>
+                <PageTitle title={'Inscrever para viagem'} />
                 <TextField
                     label={'Nome do candidato'}
                     type="text"
                     required
                     variant="outlined"
+                    color="primary"
                     //abaixo daqui e parte da API
                     onChange={onChangeInput}
                     value={form['name']}
@@ -127,7 +128,7 @@ const ApplicationFormPage = () => {
             </FormContainer>
 
 
-        </div>
+        </ContainerPage>
     )
 };
 

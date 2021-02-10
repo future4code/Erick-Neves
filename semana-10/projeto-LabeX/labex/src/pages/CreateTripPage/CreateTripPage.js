@@ -3,10 +3,10 @@ import { useProtectedPage } from "../../Hooks/useProtectedPage";
 import useForm from "../../Hooks/useForm";
 import { baseUrl } from "../../Parameters/parameters";
 import PageTitle from "../../components/PageTitle";
-import { FormContainer } from "../ApplicationFormPage/styled";
+import { ContainerPage, FormContainer } from "../ApplicationFormPage/styled";
 import { Button, FormControl, InputLabel, MenuItem, Select, TextField } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
-import { goToListTripsAdmPage } from "../../Router/Coordinator";
+import { goToAdmPage } from "../../Router/Coordinator";
 
 
 const CreateTripPage = () => {
@@ -43,10 +43,9 @@ const CreateTripPage = () => {
   }
 
   return (
-    <div>
-      <PageTitle title={'Criar viagem'} />
+    <ContainerPage>
       <FormContainer onSubmit={createTrip}>
-
+      <PageTitle title={'Criar viagem'} />
         <TextField variant="outlined" label={'Name'}
           name='name'
           value={form.name}
@@ -100,11 +99,11 @@ const CreateTripPage = () => {
           </Select>
         </FormControl>
         <Button variant={'contained'} color="primary" type='submit'>Criar</Button>
-        <hr></hr>
-        <Button variant={'contained'} type={'submit'} onClick={() => goToListTripsAdmPage(history)}>Gerenciar viagens</Button>
+  
+        <Button variant={'contained'} type={'submit'} onClick={() => goToAdmPage(history)}>Voltar</Button>
 
       </FormContainer>
-    </div>
+    </ContainerPage>
   )
 };
 

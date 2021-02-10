@@ -1,21 +1,10 @@
 import React from "react";
 import { useProtectedPage } from "../../Hooks/useProtectedPage";
 import { goToCreateTripPage, goToListTripsAdmPage, goToLoginAdmPage } from "../../Router/Coordinator";
-import styled from 'styled-components';
 import { useHistory } from "react-router-dom";
 import { Button } from "@material-ui/core";
+import { ButtonContainer, ContainerPageBtn } from "./styles";
 
-
-
-export const ButtonContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: whitesmoke;
-  margin: 15px;
-  padding: 15px;
-`;
 
 const AdmPage = () => {
     useProtectedPage();
@@ -27,15 +16,17 @@ const AdmPage = () => {
     }
 
     return (
+      <ContainerPageBtn>
           <ButtonContainer>
-            <button onClick={() => goToCreateTripPage(history)}>
+            <Button variant={'contained'} color={'primary'} type={'submit'} onClick={() => goToCreateTripPage(history)}>
               Criar viagens
-            </button>
-            <button onClick={() => goToListTripsAdmPage(history)}>
+            </Button>
+            <Button variant={'contained'} color={'primary'} type={'submit'} onClick={() => goToListTripsAdmPage(history)}>
               Gerenciar Viagens
-            </button>
+            </Button>
             <Button variant={'contained'} type='submit' onClick={() => logout()}>Logout</Button>
           </ButtonContainer>
+      </ContainerPageBtn>
     );
   };
 

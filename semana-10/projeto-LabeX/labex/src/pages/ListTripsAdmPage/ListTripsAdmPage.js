@@ -7,6 +7,8 @@ import TripDetailPage from "../TripDetailPage/index";
 import { Button } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
 import { goToAdmPage } from "../../Router/Coordinator";
+import { BoxButton, ContainerMainTrips, ContainerInfoTrip, DelButton, DetailButton, BoxTripListPage, BoxTripListAdm } from "./styled";
+import PageTitle from "../../components/PageTitle";
 
 
 const ListTripsAdmPage = () => {
@@ -66,14 +68,16 @@ const ListTripsAdmPage = () => {
   const trispsRender = listTrips && <>{listTrips.map((trip) => {
     return (
       <div>
-        <div>
-          {trip.name}
-        </div>
-        <div>
-          <button onClick={() => getTripDetails(trip.id)}>Ver detalhes</button>
-          <button onClick={() => delTrips(trip.id)}>Deletar</button>
-        </div>
-        <hr></hr>
+        <ContainerMainTrips>
+            <ContainerInfoTrip>
+              {trip.name}
+            </ContainerInfoTrip>
+            <BoxButton>
+              <DetailButton onClick={() => getTripDetails(trip.id)}>Ver detalhes</DetailButton>
+              <DelButton onClick={() => delTrips(trip.id)}>Deletar viagem</DelButton>
+            </BoxButton>
+        </ContainerMainTrips>
+        
       </div>
     )
   })}</>
@@ -88,9 +92,14 @@ const ListTripsAdmPage = () => {
           getTripDetails={getTripDetails}
           tripId={tripId}
         />}</> :
-        <>{trispsRender}
-        <Button variant={'contained'} type={'submit'} onClick={() => goToAdmPage(history)}>Voltar</Button>
-        </>}
+        <BoxTripListAdm>
+          <PageTitle title={'Gerenciamento de viagens'} />
+          {trispsRender}
+          <BoxButton>
+            <Button variant={'contained'} type={'submit'} onClick={() => goToAdmPage(history)}>Voltar</Button>
+          </BoxButton>
+        </BoxTripListAdm>
+      }
     </div>
   )
 };

@@ -17,13 +17,21 @@ export const TextAboutUs = styled.p`
 
 export const AboutUsContainer = styled.div`
   display: flex;
-  padding: 7em;
+  padding: 120px 25px;
   height: 25%;
   width: 50%;
   color: black;
-  
+
   
   @media (min-device-width: 320px) and (max-device-width: 420px) {
     flex-direction: column;
   }
+`;
+
+export const ContainerButton = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  
 `;

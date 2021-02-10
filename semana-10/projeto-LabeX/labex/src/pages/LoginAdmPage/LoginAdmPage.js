@@ -5,32 +5,8 @@ import { baseUrl } from "../../Parameters/parameters";
 import styled from "styled-components";
 import useForm from "../../Hooks/useForm";
 import { TextField, Button } from '@material-ui/core'
-
-const LoginContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  top: 150px;
-  left: 50%;
-  transform: translate(-50%);
-  max-width: 300px;
-  height: 300px;
-  background-color: grey;
-  border: 1px solid black;
-  border-radius: 70px;
-`
-
-const BoxForm = styled.form`
-  display: flex;
-  flex-direction: column; 
-  margin: 0 20px;
-  padding: 10px;
-  color: white;
-  gap: 17px;
-`
-
+import { BoxForm, LoginContainer } from "./styles";
+import PageTitle from "../../components/PageTitle";
 
 
 export default function LoginAdmPage() {
@@ -57,7 +33,7 @@ export default function LoginAdmPage() {
   return (
     <LoginContainer>
       <BoxForm onSubmit={onSubmitLogin}>
-        <h3>Login Admin - LabeX</h3>
+      <PageTitle title={'Login ADM'} />
         <div>
           <TextField
             variant="outlined"
@@ -83,7 +59,6 @@ export default function LoginAdmPage() {
         <Button variant={'contained'} color={'primary'} type={'submit'} >LOGIN</Button>
       </BoxForm>
     </LoginContainer>
-
   );
 }
 

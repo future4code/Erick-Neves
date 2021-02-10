@@ -35,6 +35,9 @@ export const LogoHeader = styled.h1`
   padding: 10px;
   cursor: pointer;
   color: silver;
+  &:hover{
+        color: white;
+    }
 `;
 
 export const UlistsBtnHeader = styled.ul`
@@ -67,7 +70,8 @@ export const ButtonHeader = styled.button`
     outline: none;
   }
   &:hover{
-        background-color: silver;
+        background-color: darkblue;
         border-radius: 10px;
+        color: white;
     }
 `;
