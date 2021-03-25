@@ -7,11 +7,15 @@ const getAllActors = async (
 ): Promise<void> => {
    try {
 
+      //Jeito normal com SQL:
+
       // const result = await connection.raw(`
       //    SELECT * FROM Actor;
       // `)
 
-      // res.send(result[0])
+      // res.send(result[0])   //Precisa do result[0] para começar do zero sem os metadados que são gerados por raw
+
+      //Mesmo resultado mas com Query Builds, usando proprio typescript:
 
       const actors = await connection("Actor")
 

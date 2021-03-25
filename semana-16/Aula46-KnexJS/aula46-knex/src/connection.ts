@@ -1,6 +1,7 @@
 import knex from 'knex'
 import dotenv from 'dotenv'
 
+//Lembrar do npm i dotenv, e criar o .env na raiz do projeto
 dotenv.config()
 
 const connection = knex({
