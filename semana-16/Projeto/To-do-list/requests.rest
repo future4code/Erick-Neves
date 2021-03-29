@@ -1,0 +1,71 @@
+# Endpoints
+
+# 1. Criar usuário 
+PUT http://localhost:3003/user
+Content-Type: application/json
+
+{
+    "name": "Astro Dev",
+	"nickname": "astrodev",
+	"email": "astro@dev.com"
+}
+
+###
+# 2. Pegar usuário pelo id
+GET http://localhost:3003/user/16170064396310.5592867727522526
+
+# GET http://localhost:3003/user/:id
+# **Body de Resposta:**
+
+# ```json
+# {
+# 	"id": "001",
+# 	"nickname": "astrodev"
+# }
+# ```
+
+###
+# 3. Editar usuário
+POST http://localhost:3003/user/edit/16170119193520.8161988052772935
+Content-Type: application/json
+
+{
+	
+    "name": "Astro2 Dev",
+	"nickname": "Astro2 Dev",
+	"email": "astro2@dev.com"
+    
+}
+
+
+###
+# 4. Criar tarefa
+PUT http://localhost:3003/task
+Content-Type: application/json
+
+{
+	"title": "Criar banco dos alunoss",
+	"description": "Devemos criar o banco dos alunos para o módulo do backend",
+	"deadline": "30/03/2025",
+	"authorId": "16170064396310.5592867727522526"
+}
+
+###
+# 5. Pegar tarefa pelo id
+GET http://localhost:3003/task/16170173289050.40893194632035446
+
+# **Body de Resposta:**
+
+# ```json
+# {
+# 	"taskId": "001",
+# 	"title": "Criar banco dos alunos",
+# 	"description": "Devemos criar o banco dos alunos para o módulo do backend",
+# 	"limitDate": "04/05/2020",
+# 	"status": "to_do",
+# 	"creatorUserId": "001",
+# 	"creatorUserNickname": "astrodev"
+# }
+# ```
+
+###
