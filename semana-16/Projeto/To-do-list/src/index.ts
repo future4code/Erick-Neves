@@ -9,10 +9,10 @@ import getTaskById from "./endpoints/get/getTaskById"
 
 dotenv.config()
 
+app.get('/user/:id', getUserById)
 app.put('/user', createUser)
-app.put('/task', createTask)
 app.post('/user/edit/:id', editUserById)
 
-app.get('/user/:id', getUserById)
+app.put('/task', createTask)
 app.get('/task/:id', getTaskById)
 
