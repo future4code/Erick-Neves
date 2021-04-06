@@ -1,0 +1,40 @@
+# @name signup
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+   "name": "Eddie Brock", 
+   "nickname": "Venom", 
+   "email": "brock@dailybugle.com",
+   "password": "abcdef"
+}
+
+###
+
+# @name login
+
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+   "email": "brock@dailybugle.com", 
+   "password": "abcdef"
+}
+
+###
+
+@token = {{login.response.body.token}}
+
+PUT http://localhost:3003/user/edit
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+   "name": "Harry Osbourne" 
+}
+
+
+###
+GET http://localhost:3003/user/profile
+Content-Type: application/json
+authorization: {{token}}
