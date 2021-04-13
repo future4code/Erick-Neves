@@ -6,7 +6,7 @@
         "start": "tsc && node --inspect ./build/index.js",
         "dev": "ts-node-dev ./src/index.ts"
     },
-    "author": "Labenu",
+    "author": "Erick",
     "license": "ISC",
     "dependencies": {
         "bcryptjs": "^2.4.3",

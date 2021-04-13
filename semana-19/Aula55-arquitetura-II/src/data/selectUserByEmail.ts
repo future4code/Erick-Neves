@@ -1,11 +1,11 @@
 import { connection } from "../data/connection"
-import { user } from "../model/user"
+import { User } from "../model/user"
 
 export const selectUserByEmail = async (
    email: string
-): Promise<user> => {
+): Promise<User> => {
    try {
-      const result = await connection("to_do_list_users")
+      const result = await connection("to_do_list_users2")
          .select("*")
          .where({ email })
 

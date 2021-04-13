@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { taskBusiness } from "../business/taskBusiness";
+import { createTaskInputDTO } from "../model/task";
 
 export const createTask = async (
    req: Request,
@@ -8,7 +9,7 @@ export const createTask = async (
    try {
 
       //recebeu os valores da req
-      const { title, description, deadline, authorId } = req.body
+      const { title, description, deadline, authorId } = req.body as createTaskInputDTO
 
       await taskBusiness({ title, description, deadline, authorId });
       //envia a resposta

@@ -1,10 +1,11 @@
 import { Request, Response } from "express";
 import { selectTaskById } from "../data/selectTaskById";
+import { Task } from "../model/task";
 
 export const getTaskById = async (
    req: Request,
    res: Response
-) => {
+) : Promise<Task | Response> => {
    try {
 
       const { id } = req.params
@@ -26,8 +27,9 @@ export const getTaskById = async (
       }
 
       res.status(200).send(taskWithUserInfo)
-
+      return taskWithUserInfo
    } catch (error) {
       res.status(400).send(error.message)
+      return res.status(400).send(error.message)
    }
 }

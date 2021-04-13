@@ -1,16 +1,16 @@
-import { loginInput, user } from "../model/user";
+import { loginInputDTO, User } from "../model/user";
 import { selectUserByEmail } from "../data/selectUserByEmail";
 import { compare } from "../services/hashManager";
 import { generateToken } from "../services/authenticator";
 
-export async function loginBusiness(input: loginInput): Promise<string> {
+export async function loginBusiness(input: loginInputDTO): Promise<string> {
    try {
 
       if (!input.email || !input.password) {
          throw new Error("'email' e 'senha' são obrigatórios")
       }
 
-      const user: user = await selectUserByEmail(input.email)
+      const user: User = await selectUserByEmail(input.email)
 
       if (!user) {
          throw new Error("Usuário não encontrado ou senha incorreta")

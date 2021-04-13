@@ -1,8 +1,8 @@
-import { createTaskInput } from "../model/task"
+import { createTaskInputDTO } from "../model/task"
 import { generateId } from "../services/idGenerator"
 import { insertTask } from "../data/insertTask"
 
-export async function taskBusiness(input: createTaskInput): Promise<void> {
+export async function taskBusiness(input: createTaskInputDTO): Promise<void> {
 
    try {
 
@@ -26,6 +26,6 @@ export async function taskBusiness(input: createTaskInput): Promise<void> {
       })
 
    } catch (error) {
-
+      throw new Error(error.message)
    }
 }

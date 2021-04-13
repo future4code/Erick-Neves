@@ -1,3 +1,5 @@
+import { Task } from './task'
+
 export enum USER_ROLES {
    NORMAL = 'NORMAL',
    ADMIN = 'ADMIN'
@@ -8,7 +10,7 @@ export type authenticationData = {
    role: USER_ROLES
 }
 
-export type user = {
+export type User = {
    id: string,
    name: string,
    nickname: string,
@@ -17,7 +19,13 @@ export type user = {
    role: USER_ROLES
 }
 
-export type signupInput = {
+export type UserTasksDTO = {
+   id: string
+   user: User[]
+   tasks: Task[]
+ }
+
+export type signupInputDTO = {
    name: string,
    nickname: string,
    email: string,
@@ -25,7 +33,7 @@ export type signupInput = {
    role: string
 }
 
-export type loginInput = {
+export type loginInputDTO = {
    email: string,
    password: string
 }

@@ -1,10 +1,10 @@
 import { connection } from "../data/connection";
-import { task } from "../model/task";
+import { Task } from "../model/task";
 
 export const insertTask = async (
-   task: task
+   task: Task
 ) => {
-   await connection('to_do_list_tasks')
+   await connection('to_do_list_tasks2')
       .insert({
          id: task.id,
          title: task.title,

@@ -1,8 +1,8 @@
 import { connection } from "../data/connection";
-import { user } from "../model/user";
+import { User } from "../model/user";
 
 export const insertUser = async (
-   user: user
+   user: User
 ) => {
    await connection.insert({
       id: user.id,
@@ -11,5 +11,5 @@ export const insertUser = async (
       email: user.email,
       password: user.password,
       role: user.role
-   }).into('to_do_list_users')
+   }).into('to_do_list_users2')
 }

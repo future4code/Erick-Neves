@@ -1,4 +1,4 @@
-export type task = {
+export type Task = {
    id: string,
    title: string,
    description: string,
@@ -6,7 +6,7 @@ export type task = {
    authorId: string
 }
 
-export type createTaskInput = {
+export type createTaskInputDTO = {
    title: string,
    description: string,
    deadline: string,
