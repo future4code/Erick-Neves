@@ -16,7 +16,7 @@ app.post("/users/create", (req: Request, res: Response) => {
     const dateofBirth: Date = new Date(`${year}-${month}-${day}`)
     
     //necessario em qualquer endpoint:
-    //validação das entradas da requisição
+    //validação das entradas da requisição p dados
     const ageInMillis: number = Date.now() - dateofBirth.getTime()
 
     const ageInYears: number = ageInMillis / 1000 / 60 / 60 / 24 / 365
@@ -26,7 +26,7 @@ app.post("/users/create", (req: Request, res: Response) => {
       throw new Error("Idade deve ser maior do que 18 anos.")
     }
 
-    //consultar ou/e alterar a base de dados
+    //consultar ou/e alterar a base de dados:
 
     accounts.push({
       cpf,
