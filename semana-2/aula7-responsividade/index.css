@@ -1,0 +1,72 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+div {
+    border: 1px solid black;
+}
+
+#container-secundario-total {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;  
+}
+
+#first-block {
+    background-color: red;
+    height: 10vh;
+}
+
+.container-secund { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20vh ;  
+    width: 25vw; 
+    margin: 1%;
+}
+
+.blue-block {
+    background-color: blue;
+}
+.yellow-block {
+    background-color: yellow;
+}
+.green-block {
+    background-color: green;
+}
+.black-block {
+    background-color: black;
+    color: white;
+    height: 50vh;
+    width: 35vw; 
+    margin: 1%;
+}
+.white-block {
+    background-color: white;
+}
+
+/* #celulares */
+@media Only screen and (max-width: 840px) {
+    .container-secund   { 
+        flex-basis: 100%;
+        
+    }
+}
+
+/* #tablets */
+@media (min-width: 840px) and (max-width: 1250px) { 
+    .tablet-media  { 
+        display: flex;
+        flex-basis: 840px;
+    }
+    .black-block {
+        display: flex;
+        flex-basis: 400px;
+        
+    }
+}
