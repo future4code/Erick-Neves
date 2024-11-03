@@ -1,0 +1,36 @@
+
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+    "name": "Testeiro",
+	"nickname": "testeiro",
+	"email": "testeiroaula55@dev.com",
+	"password": "tested",
+	"role": "ADMIN"
+}
+
+###
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+	"email": "testeiroaula55@dev.com",
+	"password": "tested"
+}
+
+
+###
+PUT http://localhost:3003/task
+Content-Type: application/json
+
+{
+	"title": "Criar task para aula 55",
+	"description": "Devemos criar a task para o módulo do backend",
+	"deadline": "2025-03-20",
+	"authorId": "16170064396310.5592867727522526"
+}
+
+###
+GET http://localhost:3003/task/a1b47db2-6ec9-4473-aa95-cb440ffd1d13
+
