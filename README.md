@@ -1,6 +1,4 @@
-Alunos(as), sejam bem-vindos(as)!
-
-Esse repositório vai acompanhar vocês até o final do curso, para mantermos a organização, sugerimos que vocês sigam a seguinte estrutura:
+Esse repositório foi do curso da labenu do início até o final do curso, com a seguinte estrutura:
 
 ```
 .
