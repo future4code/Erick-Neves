@@ -1,4 +1,4 @@
-Esse repositório foi do curso da labenu do início até o final do curso, com a seguinte estrutura:
+Esse repositório foi construido na labenu do início até o final do curso, com a seguinte estrutura:
 
 ```
 .
