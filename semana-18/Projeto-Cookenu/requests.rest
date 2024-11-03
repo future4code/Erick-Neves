@@ -1,0 +1,58 @@
+POST http://localhost:3003/signup
+Content-Type: application/json
+
+{
+   "name": "jose lucs",
+   "email": "joselucs@gmail.com",
+   "password": "123456"
+}
+
+###
+POST http://localhost:3003/login
+Content-Type: application/json
+
+{
+   "email": "joselucs@gmail.com",
+   "password": "123456"
+}
+
+###
+
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBmM2Y5N2RjXzY4MTdfNDc4MV9iMzI5XzMzZmI4ODk0NGM0YyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjE4MjI0MTE4LCJleHAiOjE2MjAyOTc3MTh9.gAlnnWwJdEo87tLQJfiN4PbEjUA5vE82LFAa6UI2z8g
+
+GET http://localhost:3003/users/profile
+Content-Type: application/json
+Authorization: {{token}}
+
+###
+POST http://localhost:3003/users/follow
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "idFollow": "545b85a0_aa05_4493_81da_cac35ebad0e7"
+}
+
+###
+
+POST http://localhost:3003/recipes/create
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "title": "Costelinha de Porco Chutney",
+    "description": "Combinação perfeita! A costelinha é suculenta e o chutney de abacaxi traz frescor e exalta ainda mais o sabor da carne de porco!\nPreparo:\nTempere a costelinha com o suco de limão, o alho, sal e pimenta. Deixe descansar por 1 hora na geladeira. Coloque as costelinhas em uma fôrma untada, cubra com papel-alumínio e leve ao forno médio 180º C, preaquecido, por 1 hora. Retire o papel-alumínio, volte ao forno e deixe por mais 30 minutos ou até dourar."
+}
+
+###
+GET http://localhost:3003/recipes/0f3f97dc_6817_4781_b329_33fb88944c4c
+Content-Type: application/json
+Authorization: {{token}}
+
+###
+POST http://localhost:3003/users/password/reset
+Content-Type: application/json
+
+{
+   "email": "laabeman@gmail.com"
+}
