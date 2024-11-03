@@ -1,0 +1,39 @@
+POST http://localhost:3003/signup
+Content-Type: application/json
+
+{
+   "name": "Jose Lucs",
+   "email": "joselucs@gmail.com",
+   "password": "123456",
+   "role": "NORMAL",
+   "cep": "58429040",
+   "number": "05"
+}
+
+###
+POST http://localhost:3003/login
+Content-Type: application/json
+
+{
+   "email": "joselucs@gmail.com",
+   "password": "123456"
+}
+
+###
+
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBmM2Y5N2RjXzY4MTdfNDc4MV9iMzI5XzMzZmI4ODk0NGM0YyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjE4MjI0MTE4LCJleHAiOjE2MjAyOTc3MTh9.gAlnnWwJdEo87tLQJfiN4PbEjUA5vE82LFAa6UI2z8g
+
+GET http://localhost:3003/users/profile
+Content-Type: application/json
+Authorization: {{token}}
+
+###
+POST http://localhost:3003/users/follow
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "idFollow": "545b85a0_aa05_4493_81da_cac35ebad0e7"
+}
+
+###
